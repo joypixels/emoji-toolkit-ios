@@ -10,6 +10,12 @@ import Foundation
 
 public class Ruleset: RulesetInterface {
     
+    private let shortcodeReplace: [String : String] = [
+        ":joy:": "\u{1f602}",
+        ":dog:": "\u{1F436}"
+    ]
+    
+    
     /// Returns the shortcode unicode replacement rules
     
     /**
@@ -17,7 +23,7 @@ public class Ruleset: RulesetInterface {
      */
     
     public func getShortcodeReplace() -> [String : String] {
-        return [:]
+        return shortcodeReplace
     }
     
     

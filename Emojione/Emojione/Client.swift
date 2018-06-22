@@ -10,7 +10,11 @@ import Foundation
 
 public class Client: ClientInterface {
     
-    public var shortcodeRegexp: String = ":([-+\\w]+):"
+    public var shortcodeRegEx: String = ":([-+\\w]+):"
+    
+    public var shortcodes: Bool = true
+    
+    public var ruleset: RulesetInterface = Ruleset()
     
     
     /// First pass changes unicode characters into emoji markup.
@@ -52,7 +56,13 @@ public class Client: ClientInterface {
      */
     
     public func shortnameToUnicode(string: String) -> String {
+        guard shortcodes == true else { return string }
         
+        // TODO: ASCII
+        
+        return regexReplace(regexString: shortcodeRegEx, string: string) { shortcode -> String in
+            return ruleset.getShortcodeReplace()[shortcode] ?? shortcode
+        }
     }
     
     
@@ -128,5 +138,24 @@ public class Client: ClientInterface {
         }
         
         return result
+    }
+    
+    private func regexReplace(regexString: String, string: String, callback: (String) -> String) -> String {
+        let mutableString = NSMutableString(string: string)
+        var offset = 0
+        
+        let matches = regexMatches(regexString: regexString, string: string)
+        
+        for (matchString, match) in matches {
+            let replacementString = callback(matchString)
+            var resultRange = match.range
+            resultRange.location += offset
+            
+            mutableString.replaceCharacters(in: resultRange, with: replacementString)
+            
+            offset += replacementString.utf16.count - resultRange.length
+        }
+        
+        return mutableString as String
     }
 }
