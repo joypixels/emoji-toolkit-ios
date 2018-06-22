@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Ruleset: RulesetInterface {
+public class Ruleset: RulesetInterface {
     
     /// Returns the shortcode unicode replacement rules
     
@@ -16,7 +16,7 @@ class Ruleset: RulesetInterface {
      Returns the shortcode unicode replacement rules
      */
     
-    func getShortcodeReplace() -> [String : String] {
+    public func getShortcodeReplace() -> [String : String] {
         return [:]
     }
     
@@ -27,7 +27,7 @@ class Ruleset: RulesetInterface {
      Returns the ascii unicode replacement rules
      */
     
-    func getAsciiReplace() -> [String : String] {
+    public func getAsciiReplace() -> [String : String] {
         return [:]
     }
     
@@ -38,7 +38,7 @@ class Ruleset: RulesetInterface {
      Returns the unicode shortcode replacement rules
      */
     
-    func getUnicodeReplace() -> [String : String] {
+    public func getUnicodeReplace() -> [String : String] {
         return [:]
     }
     
@@ -49,7 +49,7 @@ class Ruleset: RulesetInterface {
      Returns the unicode shortcode greedy replacement rules
      */
     
-    func getUnicodeReplaceGreedy() -> [String : String] {
+    public func getUnicodeReplaceGreedy() -> [String : String] {
         return [:]
     }
     
@@ -60,7 +60,7 @@ class Ruleset: RulesetInterface {
      Returns the regexp to find ascii smilies
      */
     
-    func getAsciiRegexp() -> [String : String] {
+    public func getAsciiRegexp() -> [String : String] {
         return [:]
     }
 }

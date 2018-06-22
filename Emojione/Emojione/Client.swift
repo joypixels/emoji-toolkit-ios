@@ -8,7 +8,10 @@
 
 import Foundation
 
-class Client: ClientInterface {
+public class Client: ClientInterface {
+    
+    public var shortcodeRegexp: String = ":([-+\\w]+):"
+    
     
     /// First pass changes unicode characters into emoji markup.
     /// Second pass changes any shortnames into emoji markup.
@@ -18,7 +21,7 @@ class Client: ClientInterface {
      Second pass changes any shortnames into emoji markup.
      */
     
-    func toImage(string: String) -> String {
+    public func toImage(string: String) -> String {
         return ""
     }
     
@@ -33,7 +36,7 @@ class Client: ClientInterface {
      This is done for standardization when converting several unicode types.
      */
     
-    func unifyUnicode(string: String) -> String {
+    public func unifyUnicode(string: String) -> String {
         return ""
     }
     
@@ -48,8 +51,8 @@ class Client: ClientInterface {
      This is useful for sending emojis back to mobile devices.
      */
     
-    func shortnameToUnicode(string: String) -> String {
-        return ""
+    public func shortnameToUnicode(string: String) -> String {
+        
     }
     
     
@@ -63,7 +66,7 @@ class Client: ClientInterface {
      This is useful for systems that don't support unicode or images.
      */
     
-    func shortnameToAscii(string: String) -> String {
+    public func shortnameToAscii(string: String) -> String {
         return ""
     }
     
@@ -74,7 +77,7 @@ class Client: ClientInterface {
      This will output image markup from shortname input.
      */
     
-    func shortnameToImage(string: String) -> String {
+    public func shortnameToImage(string: String) -> String {
         return ""
     }
     
@@ -85,7 +88,7 @@ class Client: ClientInterface {
      This will return the shortname from unicode input.
      */
     
-    func toShort(string: String) -> String {
+    public func toShort(string: String) -> String {
         return ""
     }
     
@@ -96,7 +99,34 @@ class Client: ClientInterface {
      This will output image markup from unicode input.
      */
     
-    func unicodeToImage(string: String) -> String {
+    public func unicodeToImage(string: String) -> String {
         return ""
+    }
+    
+    
+    // MARK: - Helper Methods
+    
+    private func regexMatches(regexString: String, string: String) -> [(String, NSTextCheckingResult)] {
+        let regex: NSRegularExpression
+        
+        do {
+            regex = try NSRegularExpression(pattern: regexString, options: [])
+        } catch {
+            return []
+        }
+        
+        let matches = regex.matches(in: string, options: [], range: NSRange(string.startIndex..., in: string))
+        
+        var result: [(String, NSTextCheckingResult)] = []
+        
+        for match: NSTextCheckingResult in matches {
+            let range = match.range
+            if let swiftRange = Range(range, in: string) {
+                let matchedString = String(string[swiftRange])
+                result.append((matchedString, match))
+            }
+        }
+        
+        return result
     }
 }
