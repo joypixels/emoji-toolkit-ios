@@ -40,4 +40,16 @@ class ClientTests: XCTestCase {
         
         XCTAssertEqual("🐶Hello :thisisnotavalidshortname:😂", result)
     }
+    
+    func testShortnameToUnicode_WhenAsciiIsEnabled_ShouldReplaceSmileysWithUnicodeCharacters() {
+        let asciiEnabledClient = Client()
+        asciiEnabledClient.ascii = true
+        client = asciiEnabledClient
+        
+        let shortNameWithAsciiString = "Hello :\") :dog: :joy:"
+        
+        let result = client.shortnameToUnicode(string: shortNameWithAsciiString)
+        
+        XCTAssertEqual("Hello 😂 🐶 😂", result)
+    }
 }

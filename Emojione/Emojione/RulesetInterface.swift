@@ -52,5 +52,5 @@ public protocol RulesetInterface {
      Returns the regexp to find ascii smilies
      */
     
-    func getAsciiRegexp() -> [String : String]
+    func getAsciiRegexp() -> String
 }

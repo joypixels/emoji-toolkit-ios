@@ -15,6 +15,125 @@ public class Ruleset: RulesetInterface {
         ":dog:": "\u{1F436}"
     ]
     
+    private let asciiReplace: [String : String] = [
+        "*\\0/*" : ":person_gesturing_ok:",
+        "\\0/" : ":person_gesturing_ok:",
+        "*\\O/*" : ":person_gesturing_ok:",
+        "\\O/" : ":person_gesturing_ok:",
+        "O:-)" : ":innocent:",
+        "0:-3" : ":innocent:",
+        "0:3" : ":innocent:",
+        "0:-)" : ":innocent:",
+        "0:)" : ":innocent:",
+        "0;^)" : ":innocent:",
+        "O:)" : ":innocent:",
+        "O;-)" : ":innocent:",
+        "O=)" : ":innocent:",
+        "0;-)" : ":innocent:",
+        "O:-3" : ":innocent:",
+        "O:3" : ":innocent:",
+        "</3" : ":broken_heart:",
+        "B-)" : ":sunglasses:",
+        "B)" : ":sunglasses:",
+        "8)" : ":sunglasses:",
+        "8-)" : ":sunglasses:",
+        "B-D" : ":sunglasses:",
+        "8-D" : ":sunglasses:",
+        "-_-" : ":expressionless:",
+        "-__-" : ":expressionless:",
+        "-___-" : ":expressionless:",
+        ">:\\" : ":confused:",
+        ">:/" : ":confused:",
+        ":-/" : ":confused:",
+        ":-." : ":confused:",
+        ":/" : ":confused:",
+        ":\\" : ":confused:",
+        "=/" : ":confused:",
+        "=\\" : ":confused:",
+        ":L" : ":confused:",
+        "=L" : ":confused:",
+        ":-O" : ":open_mouth:",
+        ":O" : ":open_mouth:",
+        "O_O" : ":open_mouth:",
+        ">:O" : ":open_mouth:",
+        ":-X" : ":no_mouth:",
+        ":X" : ":no_mouth:",
+        ":-#" : ":no_mouth:",
+        ":#" : ":no_mouth:",
+        "=X" : ":no_mouth:",
+        "=#" : ":no_mouth:",
+        ":\")" : ":joy:",
+        ":\"-)" : ":joy:",
+        "\":)" : ":sweat_smile:",
+        "\":-)" : ":sweat_smile:",
+        "\"=)" : ":sweat_smile:",
+        "\":D" : ":sweat_smile:",
+        "\":-D" : ":sweat_smile:",
+        "\"=D" : ":sweat_smile:",
+        ">:)" : ":laughing:",
+        ">;)" : ":laughing:",
+        ">:-)" : ":laughing:",
+        ">=)" : ":laughing:",
+        "\":(" : ":sweat:",
+        "\":-(" : ":sweat:",
+        "\"=(" : ":sweat:",
+        ">:P" : ":stuck_out_tongue_winking_eye:",
+        "X-P" : ":stuck_out_tongue_winking_eye:",
+        ">:[" : ":disappointed:",
+        ":-(" : ":disappointed:",
+        ":(" : ":disappointed:",
+        ":-[" : ":disappointed:",
+        ":[" : ":disappointed:",
+        "=(" : ":disappointed:",
+        ">:(" : ":angry:",
+        ">:-(" : ":angry:",
+        ":@" : ":angry:",
+        ":\"(" : ":cry:",
+        ":\"-(" : ":cry:",
+        ";(" : ":cry:",
+        ";-(" : ":cry:",
+        ">.<" : ":persevere:",
+        "#-)" : ":dizzy_face:",
+        "#)" : ":dizzy_face:",
+        "%-)" : ":dizzy_face:",
+        "%)" : ":dizzy_face:",
+        "X)" : ":dizzy_face:",
+        "X-)" : ":dizzy_face:",
+        ":)" : ":slight_smile:",
+        ":-)" : ":slight_smile:",
+        "=]" : ":slight_smile:",
+        "=)" : ":slight_smile:",
+        ":]" : ":slight_smile:",
+        ":P" : ":stuck_out_tongue:",
+        ":-P" : ":stuck_out_tongue:",
+        "=P" : ":stuck_out_tongue:",
+        ":-Þ" : ":stuck_out_tongue:",
+        ":Þ" : ":stuck_out_tongue:",
+        ":-b" : ":stuck_out_tongue:",
+        ":b" : ":stuck_out_tongue:",
+        "<3" : ":heart:",
+        ":D" : ":smiley:",
+        ":-D" : ":smiley:",
+        "=D" : ":smiley:",
+        ";)" : ":wink:",
+        ";-)" : ":wink:",
+        "*-)" : ":wink:",
+        "*)" : ":wink:",
+        ";-]" : ":wink:",
+        ";]" : ":wink:",
+        ";D" : ":wink:",
+        ";^)" : ":wink:",
+        ":*" : ":kissing_heart:",
+        ":-*" : ":kissing_heart:",
+        "=*" : ":kissing_heart:",
+        ":^*" : ":kissing_heart:",
+        "D:" : ":fearful:",
+        ":$" : ":flushed:",
+        "=$" : ":flushed:",
+        "(y)" : ":thumbsup:"
+    ]
+    
+    private var asciiRegexp = "\\*\\\\0\\/\\*|\\\\0\\/|\\*\\\\O\\/\\*|\\\\O\\/|O:-\\)|0:-3|0:3|0:-\\)|0:\\)|0;\\^\\)|O:\\)|O;-\\)|O=\\)|0;-\\)|O:-3|O:3|<\\/3|B-\\)|B\\)|8\\)|8-\\)|B-D|8-D|-_-|-__-|-___-|>:\\\\|>:\\/|:-\\/|:-\\.|:\\/|:\\\\|=\\/|=\\\\|:L|=L|:-O|:O|O_O|>:O|:-X|:X|:-#|:#|=X|=#|:(\"|“)\\)|:(\"|“)-\\)|(\"|“):\\)|(\"|“):-\\)|(\"|“)=\\)|(\"|“):D|(\"|“):-D|(\"|“)=D|>:\\)|>;\\)|>:-\\)|>=\\)|(\"|“):\\(|(\"|“):-\\(|(\"|“)=\\(|>:P|X-P|>:\\[|:-\\(|:\\(|:-\\[|:\\[|=\\(|>:\\(|>:-\\(|:@|:(\"|“)\\(|:(\"|“)-\\(|;\\(|;-\\(|>\\.<|#-\\)|#\\)|%-\\)|%\\)|X\\)|X-\\)|:\\)|:-\\)|=]|=\\)|:]|:P|:-P|=P|:-Þ|:Þ|:-b|:b|<3|:D|:-D|=D|;\\)|;-\\)|\\*-\\)|\\*\\)|;-]|;]|;D|;\\^\\)|:\\*|:-\\*|=\\*|:\\^\\*|D:|:\\$|=\\$|\\(y\\)"
     
     /// Returns the shortcode unicode replacement rules
     
@@ -34,7 +153,7 @@ public class Ruleset: RulesetInterface {
      */
     
     public func getAsciiReplace() -> [String : String] {
-        return [:]
+        return asciiReplace
     }
     
     
@@ -66,7 +185,7 @@ public class Ruleset: RulesetInterface {
      Returns the regexp to find ascii smilies
      */
     
-    public func getAsciiRegexp() -> [String : String] {
-        return [:]
+    public func getAsciiRegexp() -> String {
+        return asciiRegexp
     }
 }

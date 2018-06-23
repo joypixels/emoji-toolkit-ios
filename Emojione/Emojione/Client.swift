@@ -10,9 +10,12 @@ import Foundation
 
 public class Client: ClientInterface {
     
+    public var ascii: Bool = false // convert ascii smileys?
+    public var shortcodes: Bool = true // convert shortcodes?
+    
     public var shortcodeRegEx: String = ":([-+\\w]+):"
     
-    public var shortcodes: Bool = true
+    
     
     public var ruleset: RulesetInterface = Ruleset()
     
@@ -57,10 +60,15 @@ public class Client: ClientInterface {
     
     public func shortnameToUnicode(string: String) -> String {
         guard shortcodes == true else { return string }
+        var result = string
         
-        // TODO: ASCII
-        
-        return regexReplace(regexString: shortcodeRegEx, string: string) { shortcode -> String in
+        if ascii {
+            result = regexReplace(regexString: ruleset.getAsciiRegexp(), string: string) { ascii -> String in
+                return ruleset.getAsciiReplace()[ascii] ?? ascii
+            }
+        }
+
+        return regexReplace(regexString: shortcodeRegEx, string: result) { shortcode -> String in
             return ruleset.getShortcodeReplace()[shortcode] ?? shortcode
         }
     }

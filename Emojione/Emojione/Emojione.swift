@@ -8,6 +8,10 @@
 
 import Foundation
 
-class Emojione {
-    
+public class Emojione {
+    func test() {
+        let interface: RulesetInterface = Ruleset()
+        
+        interface.getAsciiRegexp()
+    }
 }
