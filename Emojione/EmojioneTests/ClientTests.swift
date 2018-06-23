@@ -26,11 +26,11 @@ class ClientTests: XCTestCase {
     }
     
     func testShortnameToUnicode_ShouldReplaceShortNamesWithUnicodeCharacters() {
-        let shortNameString = ":dog:Hello :joy: :dog::dog:  :joy:"
+        let shortNameString = ":dog:Hello :joy: :dog::dog:  :joy: :kiss_woman_man:"
         
         let result = client.shortnameToUnicode(string: shortNameString)
         
-        XCTAssertEqual("🐶Hello 😂 🐶🐶  😂", result)
+        XCTAssertEqual("🐶Hello 😂 🐶🐶  😂 👩‍❤️‍💋‍👨", result)
     }
     
     func testShortnameToUnicode_ShouldIgnoreInvalidShortNames() {
@@ -59,5 +59,13 @@ class ClientTests: XCTestCase {
         let result = client.asciiToShortname(string: asciiString)
         
         XCTAssertEqual("Hello :slight_smile: :wink:", result)
+    }
+    
+    func testToShort_ShouldReplaceEmojiWithShortNames() {
+        let emojiString = "Hello 🐶 🚋 😂 ✍🏻"
+        
+        let result = client.toShort(string: emojiString)
+        
+        XCTAssertEqual("Hello :dog: :train: :joy: :writing_hand_tone1:", result)
     }
 }

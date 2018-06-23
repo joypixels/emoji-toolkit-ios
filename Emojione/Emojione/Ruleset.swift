@@ -12,7 +12,10 @@ public class Ruleset: RulesetInterface {
     
     private let shortcodeReplace: [String : String] = [
         ":joy:": "\u{1f602}",
-        ":dog:": "\u{1F436}"
+        ":dog:": "\u{1F436}",
+        ":train:": "\u{1f68b}",
+        ":writing_hand_tone1:": "\u{270d}\u{1f3fb}",
+        ":kiss_woman_man:": "\u{1f469}\u{200d}\u{2764}\u{fe0f}\u{200d}\u{1f48b}\u{200d}\u{1f468}"
     ]
     
     private let asciiReplace: [String : String] = [
@@ -135,6 +138,15 @@ public class Ruleset: RulesetInterface {
     
     private var asciiRegexp = "\\*\\\\0\\/\\*|\\\\0\\/|\\*\\\\O\\/\\*|\\\\O\\/|O:-\\)|0:-3|0:3|0:-\\)|0:\\)|0;\\^\\)|O:\\)|O;-\\)|O=\\)|0;-\\)|O:-3|O:3|<\\/3|B-\\)|B\\)|8\\)|8-\\)|B-D|8-D|-_-|-__-|-___-|>:\\\\|>:\\/|:-\\/|:-\\.|:\\/|:\\\\|=\\/|=\\\\|:L|=L|:-O|:O|O_O|>:O|:-X|:X|:-#|:#|=X|=#|:(\"|“)\\)|:(\"|“)-\\)|(\"|“):\\)|(\"|“):-\\)|(\"|“)=\\)|(\"|“):D|(\"|“):-D|(\"|“)=D|>:\\)|>;\\)|>:-\\)|>=\\)|(\"|“):\\(|(\"|“):-\\(|(\"|“)=\\(|>:P|X-P|>:\\[|:-\\(|:\\(|:-\\[|:\\[|=\\(|>:\\(|>:-\\(|:@|:(\"|“)\\(|:(\"|“)-\\(|;\\(|;-\\(|>\\.<|#-\\)|#\\)|%-\\)|%\\)|X\\)|X-\\)|:\\)|:-\\)|=]|=\\)|:]|:P|:-P|=P|:-Þ|:Þ|:-b|:b|<3|:D|:-D|=D|;\\)|;-\\)|\\*-\\)|\\*\\)|;-]|;]|;D|;\\^\\)|:\\*|:-\\*|=\\*|:\\^\\*|D:|:\\$|=\\$|\\(y\\)"
     
+    private var unicodeReplace : [String: String] = [
+        "\u{1f602}": ":joy:",
+        "\u{1F436}": ":dog:",
+        "\u{1f68b}": ":train:",
+        "\u{270d}\u{1f3fb}": ":writing_hand_tone1:",
+        "\u{1f469}\u{200d}\u{2764}\u{fe0f}\u{200d}\u{1f48b}\u{200d}\u{1f468}": ":kiss_woman_man:"
+    ]
+    
+    
     /// Returns the shortcode unicode replacement rules
     
     /**
@@ -164,7 +176,7 @@ public class Ruleset: RulesetInterface {
      */
     
     public func getUnicodeReplace() -> [String : String] {
-        return [:]
+        return unicodeReplace
     }
     
     
