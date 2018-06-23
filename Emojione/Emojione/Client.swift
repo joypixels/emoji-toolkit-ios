@@ -63,9 +63,7 @@ public class Client: ClientInterface {
         var result = string
         
         if ascii {
-            result = regexReplace(regexString: ruleset.getAsciiRegexp(), string: string) { ascii -> String in
-                return ruleset.getAsciiReplace()[ascii] ?? ascii
-            }
+            result = asciiToShortname(string: result)
         }
 
         return regexReplace(regexString: shortcodeRegEx, string: result) { shortcode -> String in
@@ -86,6 +84,23 @@ public class Client: ClientInterface {
     
     public func shortnameToAscii(string: String) -> String {
         return ""
+    }
+    
+    
+    /// This will replace ascii with their shortname equivalent
+    /// ex. :) --> :slight_smile:
+    /// This is useful for systems that don't ascii emoji.
+    
+    /**
+     This will replace ascii with their shortname equivalent
+     ex. :) --> :slight_smile:
+     This is useful for systems that don't ascii emoji.
+     */
+    
+    public func asciiToShortname(string: String) -> String {
+        return regexReplace(regexString: ruleset.getAsciiRegexp(), string: string) { ascii -> String in
+            return ruleset.getAsciiReplace()[ascii] ?? ascii
+        }
     }
     
     

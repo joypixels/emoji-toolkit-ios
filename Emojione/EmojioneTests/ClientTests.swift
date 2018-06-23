@@ -52,4 +52,12 @@ class ClientTests: XCTestCase {
         
         XCTAssertEqual("Hello 😂 🐶 😂", result)
     }
+    
+    func testAsciiToShortname_ShouldReplaceAsciiSmileysWithShortNames() {
+        let asciiString = "Hello :) ;]"
+        
+        let result = client.asciiToShortname(string: asciiString)
+        
+        XCTAssertEqual("Hello :slight_smile: :wink:", result)
+    }
 }

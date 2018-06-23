@@ -60,6 +60,19 @@ public protocol ClientInterface {
     func shortnameToAscii(string: String) -> String
     
     
+    /// This will replace ascii with their shortname equivalent
+    /// ex. :) --> :slight_smile:
+    /// This is useful for systems that don't ascii emoji.
+    
+    /**
+     This will replace ascii with their shortname equivalent
+     ex. :) --> :slight_smile:
+     This is useful for systems that don't ascii emoji.
+     */
+    
+    func asciiToShortname(string: String) -> String
+    
+    
     /// This will output image markup from shortname input.
     
     /**
