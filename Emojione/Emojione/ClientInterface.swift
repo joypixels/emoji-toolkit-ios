@@ -97,5 +97,5 @@ public protocol ClientInterface {
      This will output image markup from unicode input.
      */
     
-    func unicodeToImage(string: String) -> String
+    func unicodeToImage(string: String, font: UIFont) -> NSAttributedString
 }

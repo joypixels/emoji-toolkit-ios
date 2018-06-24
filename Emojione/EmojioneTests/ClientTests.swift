@@ -68,4 +68,13 @@ class ClientTests: XCTestCase {
         
         XCTAssertEqual("Hello :dog: :train: :joy: :writing_hand_tone1:", result)
     }
+    
+    func testUnicodeToImage_ShouldReplaceEmojiWithImages() {
+        let emojiString = "Hello 🐶 🚋 😂 ✍🏻"
+        
+        let result = client.unicodeToImage(string: emojiString, font: UIFont.systemFont(ofSize: 14))
+        
+        XCTAssertEqual(13, result.length)
+        XCTAssertTrue(result.containsAttachments(in: NSRange(location: 0, length: result.length)))
+    }
 }
