@@ -183,4 +183,22 @@ public class Client: ClientInterface {
         
         return mutableString as String
     }
+    
+    
+    /// This will return a unicode scalar string from unicode input.
+    /// It expects a single character emoji.
+    /// ex. 😂 --> 1f602
+    
+    /**
+     This will return a unicode scalar string from unicode input.
+     It expects a single character emoji.
+     ex. 😂 --> 1f602
+     */
+    
+    func unicodeToScalarString(emoji: String) -> String {
+        guard let unicodeScalars = emoji.first?.unicodeScalars else { return "" }
+        
+        return unicodeScalars.map { String(format:"%02X", $0.value).lowercased() }.joined(separator:"-")
+    }
+
 }
