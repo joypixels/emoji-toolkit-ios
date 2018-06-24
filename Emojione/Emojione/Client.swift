@@ -25,6 +25,8 @@ public class Client: ClientInterface {
     
     public var ruleset: RulesetInterface = Ruleset()
     
+    public init() { }
+    
     
     /// First pass changes unicode characters into emoji markup.
     /// Second pass changes any shortnames into emoji markup.
