@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF04D60120E057540018FE8C /* Emojione.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF04D60020E057540018FE8C /* Emojione.framework */; };
+		CF04D60220E057540018FE8C /* Emojione.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF04D60020E057540018FE8C /* Emojione.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CF4E747820DD6659005C9460 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4E747720DD6659005C9460 /* AppDelegate.swift */; };
 		CF4E747A20DD6659005C9460 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4E747920DD6659005C9460 /* ViewController.swift */; };
 		CF4E747D20DD6659005C9460 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF4E747B20DD6659005C9460 /* Main.storyboard */; };
@@ -14,7 +16,22 @@
 		CF4E748220DD6659005C9460 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF4E748020DD6659005C9460 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CF04D60320E057550018FE8C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CF04D60220E057540018FE8C /* Emojione.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		CF04D60020E057540018FE8C /* Emojione.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Emojione.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF4E747420DD6659005C9460 /* EmojioneExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmojioneExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF4E747720DD6659005C9460 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF4E747920DD6659005C9460 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF04D60120E057540018FE8C /* Emojione.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +56,7 @@
 		CF4E746B20DD6659005C9460 = {
 			isa = PBXGroup;
 			children = (
+				CF04D60020E057540018FE8C /* Emojione.framework */,
 				CF4E747620DD6659005C9460 /* EmojioneExamples */,
 				CF4E747520DD6659005C9460 /* Products */,
 			);
@@ -74,6 +93,7 @@
 				CF4E747020DD6659005C9460 /* Sources */,
 				CF4E747120DD6659005C9460 /* Frameworks */,
 				CF4E747220DD6659005C9460 /* Resources */,
+				CF04D60320E057550018FE8C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -284,7 +304,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = EmojioneExamples/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.emojione.EmojioneExamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -298,7 +321,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = EmojioneExamples/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.emojione.EmojioneExamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
