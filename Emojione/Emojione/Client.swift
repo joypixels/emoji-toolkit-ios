@@ -141,15 +141,9 @@ public class Client: ClientInterface {
      */
     
     public func unicodeToImage(string: String, font: UIFont) -> NSAttributedString {
-        return regexImageReplace(regexString: unicodeRegEx, string: string, font: font) { emoji -> UIImage in
+        return regexImageReplace(regexString: unicodeRegEx, string: string, font: font) { emoji -> UIImage? in
             let filename = unicodeToScalarString(emoji: emoji)
-            let urlString = "\(imagePathPNG)/\(emojiVersion)/png/\(emojiSize)/\(filename).png"
-            
-            let url = URL(string: urlString)!
-            
-            let imageData = try! Data(contentsOf: url)
-            
-            return UIImage(data: imageData)!
+            return getEmojiImage(filename: filename)
         }
     }
     
@@ -201,7 +195,7 @@ public class Client: ClientInterface {
     }
     
     
-    private func regexImageReplace(regexString: String, string: String, font: UIFont, callback: (String) -> UIImage) -> NSAttributedString {
+    private func regexImageReplace(regexString: String, string: String, font: UIFont, callback: (String) -> UIImage?) -> NSAttributedString {
         let mutableString = NSMutableAttributedString(string: string)
         var offset = 0
         
@@ -211,7 +205,7 @@ public class Client: ClientInterface {
             var resultRange = match.range
             resultRange.location += offset
             
-            let image = callback(matchString)
+            guard let image = callback(matchString) else { continue }
             
             let attrStringWithImage = buildAttributedStringWithTextAttachment(image: image, font: font)
             
@@ -246,5 +240,16 @@ public class Client: ClientInterface {
         guard let unicodeScalars = emoji.first?.unicodeScalars else { return "" }
         
         return unicodeScalars.map { String(format:"%02X", $0.value).lowercased() }.joined(separator:"-")
+    }
+    
+    
+    private func getEmojiImage(filename: String) -> UIImage? {
+        let urlString = "\(imagePathPNG)/\(emojiVersion)/png/\(emojiSize)/\(filename).png"
+        
+        guard let url = URL(string: urlString) else { return nil }
+        
+        guard let imageData = try? Data(contentsOf: url) else { return nil }
+        
+        return UIImage(data: imageData)
     }
 }
