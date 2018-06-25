@@ -79,7 +79,7 @@ public protocol ClientInterface {
      This will output image markup from shortname input.
      */
     
-    func shortnameToImage(string: String) -> String
+    func shortnameToImage(string: String, font: UIFont) -> NSAttributedString
     
     
     /// This will return the shortname from unicode input.

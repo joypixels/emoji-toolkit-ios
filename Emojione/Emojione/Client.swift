@@ -118,8 +118,9 @@ public class Client: ClientInterface {
      This will output image markup from shortname input.
      */
     
-    public func shortnameToImage(string: String) -> String {
-        return ""
+    public func shortnameToImage(string: String, font: UIFont) -> NSAttributedString {
+        let unicodeString = shortnameToUnicode(string: string)
+        return unicodeToImage(string: unicodeString, font: font)
     }
     
     
