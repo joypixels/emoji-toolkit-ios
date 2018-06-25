@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func convertButtonTapped(_ sender: Any) {
-        label.attributedText = client.shortnameToImage(string: textField.text!, font: label.font)
+        label.attributedText = client.toImage(string: textField.text!, font: label.font)
     }
     
 }

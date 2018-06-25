@@ -28,16 +28,18 @@ public class Client: ClientInterface {
     public init() { }
     
     
-    /// First pass changes unicode characters into emoji markup.
-    /// Second pass changes any shortnames into emoji markup.
+    /// First pass changes any shortnames into emoji markup.
+    /// Second pass changes unicode characters into emoji markup.
     
     /**
-     First pass changes unicode characters into emoji markup.
-     Second pass changes any shortnames into emoji markup.
+     First pass changes any shortnames into emoji markup.
+     Second pass changes unicode characters into emoji markup.
      */
     
-    public func toImage(string: String) -> String {
-        return ""
+    public func toImage(string: String, font: UIFont) -> NSAttributedString {
+        let result = shortnameToUnicode(string: string)
+        
+        return unicodeToImage(string: result, font: font)
     }
     
     

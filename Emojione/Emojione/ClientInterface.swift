@@ -18,7 +18,7 @@ public protocol ClientInterface {
      Second pass changes any shortnames into emoji markup.
      */
     
-    func toImage(string: String) -> String
+    func toImage(string: String, font: UIFont) -> NSAttributedString
     
     
     /// Uses toShort to transform all unicode into a standard shortname
