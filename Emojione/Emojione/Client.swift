@@ -54,7 +54,8 @@ public class Client: ClientInterface {
      */
     
     public func unifyUnicode(string: String) -> String {
-        return ""
+        let result = toShort(string: string)
+        return shortnameToUnicode(string: result)
     }
     
     
