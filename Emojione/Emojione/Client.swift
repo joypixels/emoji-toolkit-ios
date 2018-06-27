@@ -83,21 +83,6 @@ public class Client: ClientInterface {
     }
     
     
-    /// This will replace shortnames with their ascii equivalent.
-    /// ex. :wink: --> ;^)
-    /// This is useful for systems that don't support unicode or images.
-    
-    /**
-     This will replace shortnames with their ascii equivalent.
-     ex. :wink: --> ;^)
-     This is useful for systems that don't support unicode or images.
-     */
-    
-    public func shortnameToAscii(string: String) -> String {
-        return ""
-    }
-    
-    
     /// This will replace ascii with their shortname equivalent
     /// ex. :) --> :slight_smile:
     /// This is useful for systems that don't ascii emoji.

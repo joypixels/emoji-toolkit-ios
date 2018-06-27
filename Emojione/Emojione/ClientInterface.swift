@@ -47,19 +47,6 @@ public protocol ClientInterface {
     func shortnameToUnicode(string: String) -> String
     
     
-    /// This will replace shortnames with their ascii equivalent.
-    /// ex. :wink: --> ;^)
-    /// This is useful for systems that don't support unicode or images.
-    
-    /**
-     This will replace shortnames with their ascii equivalent.
-     ex. :wink: --> ;^)
-     This is useful for systems that don't support unicode or images.
-     */
-    
-    func shortnameToAscii(string: String) -> String
-    
-    
     /// This will replace ascii with their shortname equivalent
     /// ex. :) --> :slight_smile:
     /// This is useful for systems that don't ascii emoji.
