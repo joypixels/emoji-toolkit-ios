@@ -10,10 +10,14 @@
 		CF04D60120E057540018FE8C /* Emojione.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF04D60020E057540018FE8C /* Emojione.framework */; };
 		CF04D60220E057540018FE8C /* Emojione.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF04D60020E057540018FE8C /* Emojione.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CF4E747820DD6659005C9460 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4E747720DD6659005C9460 /* AppDelegate.swift */; };
-		CF4E747A20DD6659005C9460 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4E747920DD6659005C9460 /* ViewController.swift */; };
 		CF4E747D20DD6659005C9460 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF4E747B20DD6659005C9460 /* Main.storyboard */; };
 		CF4E747F20DD6659005C9460 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF4E747E20DD6659005C9460 /* Assets.xcassets */; };
 		CF4E748220DD6659005C9460 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF4E748020DD6659005C9460 /* LaunchScreen.storyboard */; };
+		CFC5D58820E3C21C007BBA4D /* ToShortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC5D58720E3C21C007BBA4D /* ToShortViewController.swift */; };
+		CFEF067020E4109D00825D8F /* ShortnameToImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEF066F20E4109D00825D8F /* ShortnameToImageViewController.swift */; };
+		CFEF067220E412E500825D8F /* ShortnameToUnicodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEF067120E412E500825D8F /* ShortnameToUnicodeViewController.swift */; };
+		CFEF067420E4140600825D8F /* UnicodeToImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEF067320E4140600825D8F /* UnicodeToImageViewController.swift */; };
+		CFEF067620E4150200825D8F /* ToImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEF067520E4150200825D8F /* ToImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,11 +38,15 @@
 		CF04D60020E057540018FE8C /* Emojione.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Emojione.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF4E747420DD6659005C9460 /* EmojioneExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmojioneExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF4E747720DD6659005C9460 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CF4E747920DD6659005C9460 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CF4E747C20DD6659005C9460 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF4E747E20DD6659005C9460 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF4E748120DD6659005C9460 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF4E748320DD6659005C9460 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFC5D58720E3C21C007BBA4D /* ToShortViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToShortViewController.swift; sourceTree = "<group>"; };
+		CFEF066F20E4109D00825D8F /* ShortnameToImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortnameToImageViewController.swift; sourceTree = "<group>"; };
+		CFEF067120E412E500825D8F /* ShortnameToUnicodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortnameToUnicodeViewController.swift; sourceTree = "<group>"; };
+		CFEF067320E4140600825D8F /* UnicodeToImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnicodeToImageViewController.swift; sourceTree = "<group>"; };
+		CFEF067520E4150200825D8F /* ToImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +64,9 @@
 		CF4E746B20DD6659005C9460 = {
 			isa = PBXGroup;
 			children = (
-				CF04D60020E057540018FE8C /* Emojione.framework */,
 				CF4E747620DD6659005C9460 /* EmojioneExamples */,
 				CF4E747520DD6659005C9460 /* Products */,
+				CF04D60020E057540018FE8C /* Emojione.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,14 +81,26 @@
 		CF4E747620DD6659005C9460 /* EmojioneExamples */ = {
 			isa = PBXGroup;
 			children = (
+				CFEF066E20E4107300825D8F /* View Controllers */,
 				CF4E747720DD6659005C9460 /* AppDelegate.swift */,
 				CF4E747E20DD6659005C9460 /* Assets.xcassets */,
 				CF4E748320DD6659005C9460 /* Info.plist */,
 				CF4E748020DD6659005C9460 /* LaunchScreen.storyboard */,
 				CF4E747B20DD6659005C9460 /* Main.storyboard */,
-				CF4E747920DD6659005C9460 /* ViewController.swift */,
 			);
 			path = EmojioneExamples;
+			sourceTree = "<group>";
+		};
+		CFEF066E20E4107300825D8F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CFEF066F20E4109D00825D8F /* ShortnameToImageViewController.swift */,
+				CFEF067120E412E500825D8F /* ShortnameToUnicodeViewController.swift */,
+				CFEF067520E4150200825D8F /* ToImageViewController.swift */,
+				CFC5D58720E3C21C007BBA4D /* ToShortViewController.swift */,
+				CFEF067320E4140600825D8F /* UnicodeToImageViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,8 +175,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF4E747A20DD6659005C9460 /* ViewController.swift in Sources */,
+				CFC5D58820E3C21C007BBA4D /* ToShortViewController.swift in Sources */,
+				CFEF067620E4150200825D8F /* ToImageViewController.swift in Sources */,
+				CFEF067020E4109D00825D8F /* ShortnameToImageViewController.swift in Sources */,
+				CFEF067220E412E500825D8F /* ShortnameToUnicodeViewController.swift in Sources */,
 				CF4E747820DD6659005C9460 /* AppDelegate.swift in Sources */,
+				CFEF067420E4140600825D8F /* UnicodeToImageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
