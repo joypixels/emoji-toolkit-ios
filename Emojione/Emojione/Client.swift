@@ -10,13 +10,13 @@ import Foundation
 
 public class Client: ClientInterface {
     
-    public var ascii: Bool = false // convert ascii smileys?
-    public var shortcodes: Bool = true // convert shortcodes?
+    public var ascii: Bool = false  // convert ascii smileys?
+    public var shortcodes: Bool = true  // convert shortcodes?
     
     public var emojiVersion: String = "3.1"
-    public var emojiSize: String = "32" //available sizes are '32', '64', and '128'
+    public var emojiSize: EmojiSize = .size32
     
-    public var spriteSize: String = "32" // available sizes are '32' and '64'
+    public var greedyMatch: Bool = false
     public var imagePathPNG = "https://cdn.jsdelivr.net/emojione/assets"
     
     public var shortcodeRegEx: String = ":([-+\\w]+):"
@@ -237,7 +237,7 @@ public class Client: ClientInterface {
     }
     
     private func getEmojiImage(filename: String) -> UIImage? {
-        let urlString = "\(imagePathPNG)/\(emojiVersion)/png/\(emojiSize)/\(filename).png"
+        let urlString = "\(imagePathPNG)/\(emojiVersion)/png/\(emojiSize.rawValue)/\(filename).png"
         
         guard let url = URL(string: urlString) else { return nil }
         
