@@ -10,6 +10,8 @@ import Foundation
 
 public class Ruleset: RulesetInterface {
     
+    public init() { }
+    
     private let shortcodeReplace: [String : String] = [
         ":joy:": "\u{1f602}",
         ":dog:": "\u{1F436}",

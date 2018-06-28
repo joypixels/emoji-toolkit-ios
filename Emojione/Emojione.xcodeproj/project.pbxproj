@@ -9,11 +9,9 @@
 /* Begin PBXBuildFile section */
 		CF1A3A9420DD7C81009D6DE6 /* ClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1A3A9320DD7C81009D6DE6 /* ClientTests.swift */; };
 		CF4E745B20DD6602005C9460 /* Emojione.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF4E745120DD6602005C9460 /* Emojione.framework */; };
-		CF4E746020DD6602005C9460 /* EmojioneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4E745F20DD6602005C9460 /* EmojioneTests.swift */; };
 		CF4E746220DD6602005C9460 /* Emojione.h in Headers */ = {isa = PBXBuildFile; fileRef = CF4E745420DD6602005C9460 /* Emojione.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF4E749020DD66DB005C9460 /* Ruleset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4E748F20DD66DB005C9460 /* Ruleset.swift */; };
 		CF4E749220DD66EB005C9460 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4E749120DD66EB005C9460 /* Client.swift */; };
-		CF4E749420DD672B005C9460 /* Emojione.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4E749320DD672B005C9460 /* Emojione.swift */; };
 		CF4E749620DD67FD005C9460 /* RulesetInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4E749520DD67FD005C9460 /* RulesetInterface.swift */; };
 		CF4E749820DD6805005C9460 /* ClientInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4E749720DD6805005C9460 /* ClientInterface.swift */; };
 /* End PBXBuildFile section */
@@ -34,11 +32,9 @@
 		CF4E745420DD6602005C9460 /* Emojione.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Emojione.h; sourceTree = "<group>"; };
 		CF4E745520DD6602005C9460 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF4E745A20DD6602005C9460 /* EmojioneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmojioneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF4E745F20DD6602005C9460 /* EmojioneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojioneTests.swift; sourceTree = "<group>"; };
 		CF4E746120DD6602005C9460 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF4E748F20DD66DB005C9460 /* Ruleset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ruleset.swift; sourceTree = "<group>"; };
 		CF4E749120DD66EB005C9460 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
-		CF4E749320DD672B005C9460 /* Emojione.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emojione.swift; sourceTree = "<group>"; };
 		CF4E749520DD67FD005C9460 /* RulesetInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesetInterface.swift; sourceTree = "<group>"; };
 		CF4E749720DD6805005C9460 /* ClientInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientInterface.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,7 +82,6 @@
 				CF4E749120DD66EB005C9460 /* Client.swift */,
 				CF4E749720DD6805005C9460 /* ClientInterface.swift */,
 				CF4E745420DD6602005C9460 /* Emojione.h */,
-				CF4E749320DD672B005C9460 /* Emojione.swift */,
 				CF4E745520DD6602005C9460 /* Info.plist */,
 				CF4E748F20DD66DB005C9460 /* Ruleset.swift */,
 				CF4E749520DD67FD005C9460 /* RulesetInterface.swift */,
@@ -98,7 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				CF1A3A9320DD7C81009D6DE6 /* ClientTests.swift */,
-				CF4E745F20DD6602005C9460 /* EmojioneTests.swift */,
 				CF4E746120DD6602005C9460 /* Info.plist */,
 			);
 			path = EmojioneTests;
@@ -217,7 +211,6 @@
 				CF4E749220DD66EB005C9460 /* Client.swift in Sources */,
 				CF4E749020DD66DB005C9460 /* Ruleset.swift in Sources */,
 				CF4E749620DD67FD005C9460 /* RulesetInterface.swift in Sources */,
-				CF4E749420DD672B005C9460 /* Emojione.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,7 +219,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF1A3A9420DD7C81009D6DE6 /* ClientTests.swift in Sources */,
-				CF4E746020DD6602005C9460 /* EmojioneTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,7 +366,11 @@
 				INFOPLIST_FILE = Emojione/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.emojione.Emojione;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -397,7 +393,11 @@
 				INFOPLIST_FILE = Emojione/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.emojione.Emojione;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -412,7 +412,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = EmojioneTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.emojione.EmojioneTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -426,7 +430,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = EmojioneTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.emojione.EmojioneTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
