@@ -123,7 +123,8 @@ public class Client: ClientInterface {
     
     public func toShort(string: String) -> String {
         return regexReplace(regexString: unicodeRegEx, string: string) { emoji -> String in
-            return ruleset.getUnicodeReplace()[emoji] ?? emoji
+            let hexString = convertToHexString(string: emoji)
+            return ruleset.getUnicodeReplace()[hexString] ?? emoji
         }
     }
     
@@ -244,5 +245,10 @@ public class Client: ClientInterface {
         guard let imageData = try? Data(contentsOf: url) else { return nil }
         
         return UIImage(data: imageData)
+    }
+    
+    private func convertToHexString(string: String) -> String {
+        let buffer: [UInt8] = Array(string.utf8)
+        return buffer.map { String(format: "%02X", $0) }.joined()
     }
 }
