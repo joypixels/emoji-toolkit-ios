@@ -81,7 +81,7 @@ public class Client: ClientInterface {
         }
 
         return regexReplace(regexString: shortcodeRegEx, string: result) { shortcode -> String in
-            return ruleset.getShortcodeReplace()[shortcode] ?? shortcode
+            return ruleset.getShortcodeReplace()[shortcode]?.0 ?? shortcode
         }
     }
     
@@ -137,7 +137,13 @@ public class Client: ClientInterface {
     
     public func unicodeToImage(string: String, font: UIFont) -> NSAttributedString {
         return regexImageReplace(regexString: unicodeRegEx, string: string, font: font) { emoji -> UIImage? in
-            let filename = unicodeToScalarString(emoji: emoji)
+            
+            let hexString = convertToHexString(string: emoji)
+            
+            guard let shortcode = ruleset.getUnicodeReplace()[hexString] ?? (greedyMatch ? ruleset.getUnicodeReplaceGreedy()[hexString] : nil) else { return nil }
+            
+            guard let filename = ruleset.getShortcodeReplace()[shortcode]?.1 else { return nil }
+            
             return getEmojiImage(filename: filename)
         }
     }

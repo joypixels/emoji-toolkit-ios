@@ -16,7 +16,7 @@ public protocol RulesetInterface {
      Returns the shortcode unicode replacement rules
      */
     
-    func getShortcodeReplace() -> [String : String]
+    func getShortcodeReplace() -> [String : (String, String)]
     
     
     /// Returns the ascii unicode replacement rules

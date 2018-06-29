@@ -74,7 +74,7 @@ class ClientTests: XCTestCase {
         
         let result = client.unicodeToImage(string: emojiString, font: UIFont.systemFont(ofSize: 14))
         
-        XCTAssertEqual(13, result.length)
+        XCTAssertEqual(16, result.length)
         XCTAssertTrue(result.containsAttachments(in: NSRange(location: 0, length: result.length)))
     }
 }
