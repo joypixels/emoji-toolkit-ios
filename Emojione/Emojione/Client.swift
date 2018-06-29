@@ -11,6 +11,7 @@ import Foundation
 public class Client: ClientInterface {
     
     public var ascii: Bool = false  // convert ascii smileys?
+    public var riskyMatchAscii: Bool = false  // set true to match ascii without leading/trailing space char
     public var shortcodes: Bool = true  // convert shortcodes?
     
     public var emojiVersion: String = "3.1"
@@ -224,23 +225,6 @@ public class Client: ClientInterface {
         textAttachment.image = image
         textAttachment.bounds = CGRect(x: 0, y: (font.capHeight - font.lineHeight) / 2.0, width: font.lineHeight, height: font.lineHeight)
         return NSAttributedString(attachment: textAttachment)
-    }
-    
-    
-    /// This will return a unicode scalar string from unicode input.
-    /// It expects a single character emoji.
-    /// ex. 😂 --> 1f602
-    
-    /**
-     This will return a unicode scalar string from unicode input.
-     It expects a single character emoji.
-     ex. 😂 --> 1f602
-     */
-    
-    func unicodeToScalarString(emoji: String) -> String {
-        guard let unicodeScalars = emoji.first?.unicodeScalars else { return "" }
-        
-        return unicodeScalars.map { String(format:"%02X", $0.value).lowercased() }.joined(separator:"-")
     }
     
     private func getEmojiImage(filename: String) -> UIImage? {
