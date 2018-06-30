@@ -2,7 +2,7 @@
 //  EmojiSize.swift
 //  Emojione
 //
-//  Created by Lai Yip on 6/27/18.
+//  Created by Alex Yip on 6/27/18.
 //  Copyright © 2018 Emojione. All rights reserved.
 //
 
