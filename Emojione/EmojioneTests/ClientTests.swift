@@ -24,6 +24,12 @@ class ClientTests: XCTestCase {
 
         super.tearDown()
     }
+    
+    private func enableAscii() {
+        let asciiEnabledClient = Client()
+        asciiEnabledClient.ascii = true
+        client = asciiEnabledClient
+    }
 
     func testShortnameToUnicode_ShouldReplaceShortNamesWithUnicodeCharacters() {
         let shortNameString = ":dog:Hello :joy: :dog::dog:  :joy: :kiss_woman_man:"
@@ -40,11 +46,17 @@ class ClientTests: XCTestCase {
 
         XCTAssertEqual("🐶Hello :thisisnotavalidshortname:😂", result)
     }
+    
+    func testShortnameToUnicode_WhenAsciiIsDisabled_ShouldIgnoreAsciiSmileys() {
+        let shortNameString = ":dog: Hello :) =) :\")"
+        
+        let result = client.shortnameToUnicode(string: shortNameString)
+        
+        XCTAssertEqual("🐶 Hello :) =) :\")", result)
+    }
 
     func testShortnameToUnicode_WhenAsciiIsEnabled_ShouldReplaceSmileysWithUnicodeCharacters() {
-        let asciiEnabledClient = Client()
-        asciiEnabledClient.ascii = true
-        client = asciiEnabledClient
+        enableAscii()
 
         let shortNameWithAsciiString = "Hello :\") :dog: :joy: :smile: :)"
 
@@ -73,8 +85,39 @@ class ClientTests: XCTestCase {
         let emojiString = "Hello 🐶 🚋 😂 ✍🏻"
 
         let result = client.unicodeToImage(string: emojiString, font: UIFont.systemFont(ofSize: 14))
-
+        
         XCTAssertEqual(13, result.length)
+        XCTAssertTrue(result.containsAttachments(in: NSRange(location: 0, length: result.length)))
+    }
+    
+    func testUnicodeToImage_WhenAsciiIsNotEnabled_ShouldIgnoreSmileys() {
+        let emojiString = "Hello :)"
+        
+        let result = client.unicodeToImage(string: emojiString, font: UIFont.systemFont(ofSize: 14))
+        
+        XCTAssertEqual(8, result.length)
+        XCTAssertFalse(result.containsAttachments(in: NSRange(location: 0, length: result.length)))
+    }
+    
+    func testUnicodeToImage_WhenAsciiIsEnabled_ShouldReplaceSmileysWithImages() {
+        enableAscii()
+        
+        let emojiString = "Hello :)"
+        
+        let result = client.unicodeToImage(string: emojiString, font: UIFont.systemFont(ofSize: 14))
+        
+        XCTAssertEqual(7, result.length)
+        XCTAssertTrue(result.containsAttachments(in: NSRange(location: 0, length: result.length)))
+    }
+    
+    func testToImage_WhenAsciiIsEnabled_ShouldReplaceAsciiAndEmojisWithImages() {
+        enableAscii()
+        
+        let emojiString = "Hello 🐶 🚋 😂 ✍🏻 :) =)"
+        
+        let result = client.unicodeToImage(string: emojiString, font: UIFont.systemFont(ofSize: 14))
+        
+        XCTAssertEqual(17, result.length)
         XCTAssertTrue(result.containsAttachments(in: NSRange(location: 0, length: result.length)))
     }
 }

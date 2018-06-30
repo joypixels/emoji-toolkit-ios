@@ -146,6 +146,7 @@ public class Client: ClientInterface {
 
         if ascii {
             result = asciiToShortname(string: result)
+            result = shortnameToUnicode(string: result)
         }
 
         return regexImageReplace(regexString: unicodeRegEx, string: result, font: font) { emoji -> UIImage? in
