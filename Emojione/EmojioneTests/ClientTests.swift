@@ -46,19 +46,19 @@ class ClientTests: XCTestCase {
         asciiEnabledClient.ascii = true
         client = asciiEnabledClient
         
-        let shortNameWithAsciiString = "Hello :\") :dog: :joy:"
+        let shortNameWithAsciiString = "Hello :\") :dog: :joy: :smile: :)"
         
         let result = client.shortnameToUnicode(string: shortNameWithAsciiString)
         
-        XCTAssertEqual("Hello 😂 🐶 😂", result)
+        XCTAssertEqual("Hello 😂 🐶 😂 😄 🙂", result)
     }
     
     func testAsciiToShortname_ShouldReplaceAsciiSmileysWithShortNames() {
-        let asciiString = "Hello :) ;]"
+        let asciiString = "=) Hello :) ;]"
         
         let result = client.asciiToShortname(string: asciiString)
         
-        XCTAssertEqual("Hello :slight_smile: :wink:", result)
+        XCTAssertEqual(":slight_smile: Hello :slight_smile: :wink:", result)
     }
     
     func testToShort_ShouldReplaceEmojiWithShortNames() {
@@ -74,7 +74,7 @@ class ClientTests: XCTestCase {
         
         let result = client.unicodeToImage(string: emojiString, font: UIFont.systemFont(ofSize: 14))
         
-        XCTAssertEqual(16, result.length)
+        XCTAssertEqual(13, result.length)
         XCTAssertTrue(result.containsAttachments(in: NSRange(location: 0, length: result.length)))
     }
 }

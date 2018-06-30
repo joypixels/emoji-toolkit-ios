@@ -98,8 +98,12 @@ public class Client: ClientInterface {
      */
     
     public func asciiToShortname(string: String) -> String {
-        return regexReplace(regexString: ruleset.getAsciiRegexp(), string: string) { ascii -> String in
-            return ruleset.getAsciiReplace()[ascii] ?? ascii
+        let asciiRegex = riskyMatchAscii ? "(?:\(ruleset.getAsciiRegexp()))" : "(?:(\\s|^)\(ruleset.getAsciiRegexp()))"
+        
+        return regexReplace(regexString: asciiRegex, string: string) { ascii -> String in
+            let smiley = ascii.trimmingCharacters(in: .whitespacesAndNewlines)
+            let shortname = ruleset.getAsciiReplace()[smiley] ?? smiley
+            return ascii.replacingOccurrences(of: smiley, with: shortname)
         }
     }
     
@@ -137,7 +141,13 @@ public class Client: ClientInterface {
      */
     
     public func unicodeToImage(string: String, font: UIFont) -> NSAttributedString {
-        return regexImageReplace(regexString: unicodeRegEx, string: string, font: font) { emoji -> UIImage? in
+        var result = string
+        
+        if ascii {
+            result = asciiToShortname(string: result)
+        }
+        
+        return regexImageReplace(regexString: unicodeRegEx, string: result, font: font) { emoji -> UIImage? in
             
             let hexString = convertToHexString(string: emoji)
             
