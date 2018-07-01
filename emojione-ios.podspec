@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'emojione-ios'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'Official EmojiOne iOS Library'
   s.description      = 'EmojiOne iOS library to convert emoji into various formats, including conversion to EmojiOne emoji images.'
   s.homepage         = 'https://www.emojione.com'
