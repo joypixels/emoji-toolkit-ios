@@ -13,7 +13,7 @@ class ShortnameToImageViewController: UIViewController {
 
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var label: UILabel!
-    
+
     var asynchronous: Bool = true
 
     let client: ClientInterface = Client()

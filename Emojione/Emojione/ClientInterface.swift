@@ -19,17 +19,17 @@ public protocol ClientInterface {
      */
 
     func toImage(string: String, font: UIFont) -> NSAttributedString
-    
+
     /// First pass changes unicode characters into emoji markup.
     /// Second pass changes any shortnames into emoji markup.
     /// Callback when emoji images are downloaded.
-    
+
     /**
      First pass changes unicode characters into emoji markup.
      Second pass changes any shortnames into emoji markup.
      Callback when emoji images are downloaded.
      */
-    
+
     func toImageAsync(string: String, font: UIFont, callback: @escaping (NSAttributedString) -> Void)
 
     /// Uses toShort to transform all unicode into a standard shortname
@@ -77,13 +77,13 @@ public protocol ClientInterface {
     func shortnameToImage(string: String, font: UIFont) -> NSAttributedString
 
     /// This will output image markup from shortname input with asynchronous callback.
-    
+
     /**
      This will output image markup from shortname input with asynchronous callback.
      */
-    
+
     func shortnameToImageAsync(string: String, font: UIFont, callback: @escaping (NSAttributedString) -> Void)
-    
+
     /// This will return the shortname from unicode input.
 
     /**
@@ -99,12 +99,12 @@ public protocol ClientInterface {
      */
 
     func unicodeToImage(string: String, font: UIFont) -> NSAttributedString
-    
+
     /// This will output image markup from unicode input with asynchronous callback.
-    
+
     /**
      This will output image markup from unicode input with asynchronous callback.
      */
-    
+
     func unicodeToImageAsync(string: String, font: UIFont, callback: @escaping (NSAttributedString) -> Void)
 }

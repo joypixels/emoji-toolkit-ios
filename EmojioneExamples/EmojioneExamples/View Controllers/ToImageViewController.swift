@@ -15,7 +15,7 @@ class ToImageViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
 
     var asynchronous: Bool = true
-    
+
     let client: ClientInterface = Client()
 
     override func viewDidLoad() {
