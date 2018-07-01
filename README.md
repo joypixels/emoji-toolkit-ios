@@ -24,7 +24,7 @@
 
 ## Installation
 
-emojione-ios is available through [CocoaPods](https://cocoapods.org). To install
+The Emojione iOS Library is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
