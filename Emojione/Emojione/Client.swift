@@ -52,6 +52,22 @@ public class Client: ClientInterface {
 
         return unicodeToImage(string: result, font: font)
     }
+    
+    /// First pass changes unicode characters into emoji markup.
+    /// Second pass changes any shortnames into emoji markup.
+    /// Callback when emoji images are downloaded.
+    
+    /**
+     First pass changes unicode characters into emoji markup.
+     Second pass changes any shortnames into emoji markup.
+     Callback when emoji images are downloaded.
+     */
+    
+    public func toImageAsync(string: String, font: UIFont, callback: @escaping (NSAttributedString) -> Void) {
+        let result = shortnameToUnicode(string: string)
+        
+        unicodeToImageAsync(string: result, font: font, callback: callback)
+    }
 
     /// Uses toShort to transform all unicode into a standard shortname
     /// then transforms the shortname into unicode.
@@ -121,6 +137,17 @@ public class Client: ClientInterface {
         let unicodeString = shortnameToUnicode(string: string)
         return unicodeToImage(string: unicodeString, font: font)
     }
+    
+    /// This will output image markup from shortname input with asynchronous callback.
+    
+    /**
+     This will output image markup from shortname input with asynchronous callback.
+     */
+    
+    public func shortnameToImageAsync(string: String, font: UIFont, callback: @escaping (NSAttributedString) -> Void) {
+        let unicodeString = shortnameToUnicode(string: string)
+        unicodeToImageAsync(string: unicodeString, font: font, callback: callback)
+    }
 
     /// This will return the shortname from unicode input.
 
@@ -159,6 +186,23 @@ public class Client: ClientInterface {
 
             return getEmojiImage(filename: filename)
         }
+    }
+    
+    /// This will output image markup from unicode input with asynchronous callback.
+    
+    /**
+     This will output image markup from unicode input with asynchronous callback.
+     */
+    
+    public func unicodeToImageAsync(string: String, font: UIFont, callback: @escaping (NSAttributedString) -> Void) {
+        var result = string
+        
+        if ascii {
+            result = asciiToShortname(string: result)
+            result = shortnameToUnicode(string: result)
+        }
+        
+        regexImageReplaceAsync(regexString: unicodeRegEx, string: result, font: font, callback: callback)
     }
 
     // MARK: - Helper Methods
@@ -270,10 +314,96 @@ public class Client: ClientInterface {
         return mutableString as NSAttributedString
     }
 
-    /// Builds an image attachment for a NSAttributedString
+    /// Replaces matched regular expression with an UIImage asynchronously.
+    ///  regexString - Regular expression
+    ///  string - String to search
+    ///  font - Used to determine line height to properly size the image
+    ///  callback(NSAttributedString) -> Void - A callback function
+    ///    that passes back the attributed string when replacements are complete.
+    
+    /**
+     Replaces matched regular expression with an UIImage asynchronously.
+      regexString - Regular expression
+      string - String to search
+      font - Used to determine line height to properly size the image
+      callback(NSAttributedString) -> Void - A callback function
+        that passes back the attributed string when replacements are complete.
+     */
+    
+    private func regexImageReplaceAsync(regexString: String, string: String, font: UIFont, callback: @escaping (NSAttributedString) -> Void) {
+        let mutableString = NSMutableAttributedString(string: string)
+        var offset = 0
+        
+        let matches = regexMatches(regexString: regexString, string: string)
+        
+        let matchesWithFilenames = matches.map { ($0, $1, getFilename(emoji: $0)) }
+        
+        let filenames = matchesWithFilenames.map { $0.2 }.filter { $0 != nil }.map { $0! }
+        
+        downloadImagesAsync(filenames: filenames) { [weak self] images in
+            guard let strongSelf = self else { return }
+            
+            for (_, match, filename) in matchesWithFilenames {
+                var resultRange = match.range
+                resultRange.location += offset
+                
+                guard let filename = filename, let image = images[filename] else { continue }
+                
+                let attrStringWithImage = strongSelf.buildAttributedStringWithTextAttachment(image: image, font: font)
+                
+                mutableString.replaceCharacters(in: resultRange, with: attrStringWithImage)
+                
+                offset += attrStringWithImage.length - resultRange.length
+            }
+            
+            callback(mutableString as NSAttributedString)
+        }
+    }
+    
+    /// Gets associated Emojione filename from unicode emoji.
+    
+    /**
+     Gets associated Emojione filename from unicode emoji.
+     */
+    
+    private func getFilename(emoji: String) -> String? {
+        let hexString = convertToHexString(string: emoji)
+        
+        guard let shortcode = ruleset.getUnicodeReplace()[hexString] ?? (greedyMatch ? ruleset.getUnicodeReplaceGreedy()[hexString] : nil) else { return nil }
+        
+        guard let filename = ruleset.getShortcodeReplace()[shortcode]?.1 else { return nil }
+        
+        return filename
+    }
+    
+    /// Downloads a list of filenames from Emojione servers asynchronously.
+    
+    /**
+     Downloads a list of filenames from Emojione servers asynchronously.
+     */
+    
+    private func downloadImagesAsync(filenames: [String], callback: @escaping ([String: UIImage]) -> Void) {
+        var result: [String: UIImage] = [:]
+        let group = DispatchGroup()
+        
+        for filename in filenames {
+            group.enter()
+            getEmojiImageAsync(filename: filename) { (image) in
+                guard let image = image else { return }
+                result[filename] = image
+                group.leave()
+            }
+        }
+        
+        group.notify(queue: .main) {
+            callback(result)
+        }
+    }
+    
+    /// Builds an image attachment for a NSAttributedString.
 
     /**
-     Builds an image attachment for a NSAttributedString
+     Builds an image attachment for a NSAttributedString.
      */
 
     private func buildAttributedStringWithTextAttachment(image: UIImage, font: UIFont) -> NSAttributedString {
@@ -283,22 +413,51 @@ public class Client: ClientInterface {
         return NSAttributedString(attachment: textAttachment)
     }
 
+    /// Builds URL object from Emojione filename.
+    
+    /**
+     Builds URL object from Emojione filename.
+     */
+    
+    private func getEmojiOneUrl(filename: String) -> URL? {
+        let urlString = "\(imagePathPNG)/\(emojiVersion)/png/\(emojiSize.rawValue)/\(filename).png"
+        return URL(string: urlString)
+    }
+    
     /// Gets emoji image from Emojione's CDN.
     /// Returns nil if unable to download image.
 
     /**
-     Gets emoji image from Emojione's CDN
+     Gets emoji image from Emojione's CDN.
      Returns nil if unable to download image.
      */
 
     private func getEmojiImage(filename: String) -> UIImage? {
-        let urlString = "\(imagePathPNG)/\(emojiVersion)/png/\(emojiSize.rawValue)/\(filename).png"
-
-        guard let url = URL(string: urlString) else { return nil }
+        guard let url = getEmojiOneUrl(filename: filename) else { return nil }
 
         guard let imageData = try? Data(contentsOf: url) else { return nil }
 
         return UIImage(data: imageData)
+    }
+
+    /// Gets emoji image from Emojione's CDN asynchronously.
+    /// Returns nil if unable to download image.
+    
+    /**
+     Gets emoji image from Emojione's CDN asynchronously.
+     Returns nil if unable to download image.
+     */
+    
+    private func getEmojiImageAsync(filename: String, callback: @escaping (UIImage?) -> Void) {
+        guard let url = getEmojiOneUrl(filename: filename) else { callback(nil); return }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) -> Void in
+            if let imageData = data, let image = UIImage(data: imageData) {
+                callback(image)
+            } else {
+                callback(nil)
+            }
+        }.resume()
     }
 
     /// Converts unicode string to hexademical byte string.

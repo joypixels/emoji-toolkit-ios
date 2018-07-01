@@ -120,4 +120,18 @@ class ClientTests: XCTestCase {
         XCTAssertEqual(17, result.length)
         XCTAssertTrue(result.containsAttachments(in: NSRange(location: 0, length: result.length)))
     }
+    
+    func testToImageAsync_ShouldReplaceEmojiWithImages() {
+        let expectation = XCTestExpectation(description: "testToImageAsync_ShouldReplaceEmojiWithImages")
+        
+        let emojiString = "Hello 🐶 🚋 😂 ✍🏻"
+        
+        client.unicodeToImageAsync(string: emojiString, font: UIFont.systemFont(ofSize: 14)) { result in
+            XCTAssertEqual(13, result.length)
+            XCTAssertTrue(result.containsAttachments(in: NSRange(location: 0, length: result.length)))
+            expectation.fulfill()
+        }
+        
+        self.wait(for: [expectation], timeout: 5.0)
+    }
 }

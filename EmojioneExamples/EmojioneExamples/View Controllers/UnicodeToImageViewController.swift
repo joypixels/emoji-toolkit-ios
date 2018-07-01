@@ -14,6 +14,8 @@ class UnicodeToImageViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var label: UILabel!
 
+    var asynchronous: Bool = true
+    
     let client: ClientInterface = Client()
 
     override func viewDidLoad() {
@@ -23,6 +25,12 @@ class UnicodeToImageViewController: UIViewController {
     @IBAction func convertButtonTapped(_ sender: Any) {
         guard let emojiString = textField.text else { return }
 
-        label.attributedText = client.unicodeToImage(string: emojiString, font: label.font)
+        if asynchronous {
+            client.unicodeToImageAsync(string: emojiString, font: label.font) { [weak self] attributedString in
+                self?.label.attributedText = attributedString
+            }
+        } else {
+            label.attributedText = client.unicodeToImage(string: emojiString, font: label.font)
+        }
     }
 }

@@ -13,6 +13,8 @@ class ShortnameToImageViewController: UIViewController {
 
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var label: UILabel!
+    
+    var asynchronous: Bool = true
 
     let client: ClientInterface = Client()
 
@@ -23,6 +25,12 @@ class ShortnameToImageViewController: UIViewController {
     @IBAction func convertButtonTapped(_ sender: Any) {
         guard let emojiString = textField.text else { return }
 
-        label.attributedText = client.shortnameToImage(string: emojiString, font: label.font)
+        if asynchronous {
+            client.shortnameToImageAsync(string: emojiString, font: label.font) { [weak self] attributedString in
+                self?.label.attributedText = attributedString
+            }
+        } else {
+            label.attributedText = client.shortnameToImage(string: emojiString, font: label.font)
+        }
     }
 }
