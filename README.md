@@ -45,7 +45,7 @@ You'll find basic usage examples here in the [/EmojioneExamples/](EmojioneExampl
 
 If you discover any bugs, feel free to create an issue on GitHub. We also welcome the open-source community to contribute to the project by forking it and issuing pull requests.
 
- *  [https://github.com/zenkimoto/emojione-ios/issues](https://github.com/zenkimoto/emojione-ios/issues)
+ *  [https://github.com/zenkimoto/emojione-ios/issues](https://github.com/emojione/emojione-ios/issues)
 
 
 ### Contact
@@ -54,5 +54,5 @@ If you have any questions, comments, or concerns you are welcome to contact us.
 
 *  [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/emojione/emojione?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 * [support@emojione.com](mailto:support@emojione.com)
-* [http://emojione.com](http://emojione.com)
+* [https://www.emojione.com](https://www.emojione.com)
 * [https://twitter.com/emojione](https://twitter.com/emojione)
