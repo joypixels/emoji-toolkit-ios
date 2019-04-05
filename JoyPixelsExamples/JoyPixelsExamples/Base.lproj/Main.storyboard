@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--EmojiOne Examples-->
+        <!--JoyPixels Examples-->
         <scene sceneID="813-QS-bDG">
             <objects>
                 <tableViewController id="she-Rs-1Do" sceneMemberID="viewController">
@@ -128,7 +128,7 @@
                             <outlet property="delegate" destination="she-Rs-1Do" id="iT7-dr-63G"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="EmojiOne Examples" id="ibp-AT-knz">
+                    <navigationItem key="navigationItem" title="JoyPixels Examples" id="ibp-AT-knz">
                         <barButtonItem key="backBarButtonItem" title="Back" id="hLh-OP-1d6"/>
                     </navigationItem>
                 </tableViewController>
@@ -139,7 +139,7 @@
         <!--toShort()-->
         <scene sceneID="hVI-rC-82u">
             <objects>
-                <viewController id="5pn-wU-0gn" customClass="ToShortViewController" customModule="EmojioneExamples" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5pn-wU-0gn" customClass="ToShortViewController" customModule="JoyPixelsExamples" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KDV-jC-vpR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -204,7 +204,7 @@
         <!--shortnameToImage()-->
         <scene sceneID="cNM-Ay-eN8">
             <objects>
-                <viewController id="7Or-P5-jwx" customClass="ShortnameToImageViewController" customModule="EmojioneExamples" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7Or-P5-jwx" customClass="ShortnameToImageViewController" customModule="JoyPixelsExamples" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uNI-dt-nZE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -288,7 +288,7 @@
         <!--shortnameToUnicode()-->
         <scene sceneID="KHa-zB-gWH">
             <objects>
-                <viewController id="lsC-gC-f3t" customClass="ShortnameToUnicodeViewController" customModule="EmojioneExamples" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lsC-gC-f3t" customClass="ShortnameToUnicodeViewController" customModule="JoyPixelsExamples" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vzF-0s-hYA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -354,7 +354,7 @@
         <!--unicodeToImage()-->
         <scene sceneID="gbS-6e-fZW">
             <objects>
-                <viewController id="jPP-33-Kai" customClass="UnicodeToImageViewController" customModule="EmojioneExamples" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jPP-33-Kai" customClass="UnicodeToImageViewController" customModule="JoyPixelsExamples" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LQx-iz-pPx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -420,7 +420,7 @@
         <!--toImage()-->
         <scene sceneID="r6i-pn-rcI">
             <objects>
-                <viewController id="wCh-pc-3UQ" customClass="ToImageViewController" customModule="EmojioneExamples" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wCh-pc-3UQ" customClass="ToImageViewController" customModule="JoyPixelsExamples" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MTb-Tm-6EW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

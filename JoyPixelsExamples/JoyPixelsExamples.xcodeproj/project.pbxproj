@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CF04D60120E057540018FE8C /* Emojione.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF04D60020E057540018FE8C /* Emojione.framework */; };
-		CF04D60220E057540018FE8C /* Emojione.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF04D60020E057540018FE8C /* Emojione.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CF04D60120E057540018FE8C /* JoyPixels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF04D60020E057540018FE8C /* JoyPixels.framework */; };
+		CF04D60220E057540018FE8C /* JoyPixels.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF04D60020E057540018FE8C /* JoyPixels.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CF4E747820DD6659005C9460 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4E747720DD6659005C9460 /* AppDelegate.swift */; };
 		CF4E747D20DD6659005C9460 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF4E747B20DD6659005C9460 /* Main.storyboard */; };
 		CF4E747F20DD6659005C9460 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF4E747E20DD6659005C9460 /* Assets.xcassets */; };
@@ -27,7 +27,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CF04D60220E057540018FE8C /* Emojione.framework in Embed Frameworks */,
+				CF04D60220E057540018FE8C /* JoyPixels.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -35,8 +35,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CF04D60020E057540018FE8C /* Emojione.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Emojione.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF4E747420DD6659005C9460 /* EmojioneExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmojioneExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF04D60020E057540018FE8C /* JoyPixels.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JoyPixels.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF4E747420DD6659005C9460 /* JoyPixelsExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JoyPixelsExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF4E747720DD6659005C9460 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF4E747C20DD6659005C9460 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF4E747E20DD6659005C9460 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF04D60120E057540018FE8C /* Emojione.framework in Frameworks */,
+				CF04D60120E057540018FE8C /* JoyPixels.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,21 +64,21 @@
 		CF4E746B20DD6659005C9460 = {
 			isa = PBXGroup;
 			children = (
-				CF4E747620DD6659005C9460 /* EmojioneExamples */,
+				CF4E747620DD6659005C9460 /* JoyPixelsExamples */,
 				CF4E747520DD6659005C9460 /* Products */,
-				CF04D60020E057540018FE8C /* Emojione.framework */,
+				CF04D60020E057540018FE8C /* JoyPixels.framework */,
 			);
 			sourceTree = "<group>";
 		};
 		CF4E747520DD6659005C9460 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CF4E747420DD6659005C9460 /* EmojioneExamples.app */,
+				CF4E747420DD6659005C9460 /* JoyPixelsExamples.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CF4E747620DD6659005C9460 /* EmojioneExamples */ = {
+		CF4E747620DD6659005C9460 /* JoyPixelsExamples */ = {
 			isa = PBXGroup;
 			children = (
 				CFEF066E20E4107300825D8F /* View Controllers */,
@@ -88,7 +88,7 @@
 				CF4E748020DD6659005C9460 /* LaunchScreen.storyboard */,
 				CF4E747B20DD6659005C9460 /* Main.storyboard */,
 			);
-			path = EmojioneExamples;
+			path = JoyPixelsExamples;
 			sourceTree = "<group>";
 		};
 		CFEF066E20E4107300825D8F /* View Controllers */ = {
@@ -106,9 +106,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CF4E747320DD6659005C9460 /* EmojioneExamples */ = {
+		CF4E747320DD6659005C9460 /* JoyPixelsExamples */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CF4E748620DD6659005C9460 /* Build configuration list for PBXNativeTarget "EmojioneExamples" */;
+			buildConfigurationList = CF4E748620DD6659005C9460 /* Build configuration list for PBXNativeTarget "JoyPixelsExamples" */;
 			buildPhases = (
 				CF4E747020DD6659005C9460 /* Sources */,
 				CF4E747120DD6659005C9460 /* Frameworks */,
@@ -119,9 +119,9 @@
 			);
 			dependencies = (
 			);
-			name = EmojioneExamples;
-			productName = EmojioneExamples;
-			productReference = CF4E747420DD6659005C9460 /* EmojioneExamples.app */;
+			name = JoyPixelsExamples;
+			productName = JoyPixelsExamples;
+			productReference = CF4E747420DD6659005C9460 /* JoyPixelsExamples.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -132,14 +132,14 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
-				ORGANIZATIONNAME = Emojione;
+				ORGANIZATIONNAME = JoyPixels;
 				TargetAttributes = {
 					CF4E747320DD6659005C9460 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
 				};
 			};
-			buildConfigurationList = CF4E746F20DD6659005C9460 /* Build configuration list for PBXProject "EmojioneExamples" */;
+			buildConfigurationList = CF4E746F20DD6659005C9460 /* Build configuration list for PBXProject "JoyPixelsExamples" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -152,7 +152,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CF4E747320DD6659005C9460 /* EmojioneExamples */,
+				CF4E747320DD6659005C9460 /* JoyPixelsExamples */,
 			);
 		};
 /* End PBXProject section */
@@ -327,10 +327,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = EmojioneExamples/Info.plist;
+				INFOPLIST_FILE = JoyPixelsExamples/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.emojione.EmojioneExamples;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JoyPixels.JoyPixelsExamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -342,10 +342,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = EmojioneExamples/Info.plist;
+				INFOPLIST_FILE = JoyPixelsExamples/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.emojione.EmojioneExamples;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JoyPixels.JoyPixelsExamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -355,7 +355,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CF4E746F20DD6659005C9460 /* Build configuration list for PBXProject "EmojioneExamples" */ = {
+		CF4E746F20DD6659005C9460 /* Build configuration list for PBXProject "JoyPixelsExamples" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CF4E748420DD6659005C9460 /* Debug */,
@@ -364,7 +364,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CF4E748620DD6659005C9460 /* Build configuration list for PBXNativeTarget "EmojioneExamples" */ = {
+		CF4E748620DD6659005C9460 /* Build configuration list for PBXNativeTarget "JoyPixelsExamples" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CF4E748720DD6659005C9460 /* Debug */,

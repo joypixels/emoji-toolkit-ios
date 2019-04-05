@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:EmojioneExamples/EmojioneExamples.xcodeproj">
+      location = "group:JoyPixelsExamples/JoyPixelsExamples.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Emojione/Emojione.xcodeproj">
+      location = "group:JoyPixels/JoyPixels.xcodeproj">
    </FileRef>
 </Workspace>

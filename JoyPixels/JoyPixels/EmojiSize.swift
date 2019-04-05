@@ -1,9 +1,9 @@
 //
 //  EmojiSize.swift
-//  Emojione
+//  JoyPixels
 //
 //  Created by Alex Yip on 6/27/18.
-//  Copyright © 2018 Emojione. All rights reserved.
+//  Copyright © 2019 JoyPixels Inc. All rights reserved.
 //
 
 import Foundation

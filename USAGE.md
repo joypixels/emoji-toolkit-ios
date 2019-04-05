@@ -1,12 +1,12 @@
-# Emojione iOS Usage
+# JoyPixels iOS Usage
 
 ## Initialization
 
-Start by importing the Emojione iOS library.
+Start by importing the JoyPixels iOS library.
 
-**`import emojione_ios`**
+**`import joypixels_ios`**
 
-Instantiate the Emojione client using the default rule set.
+Instantiate the JoyPixels client using the default rule set.
 
 **`let client = Client()`**
 
@@ -18,7 +18,7 @@ _The default ruleset is recommended._
 
 ## Client Properties
 
-The following properties are available in the Swift/iOS version of the Emojione library:
+The following properties are available in the Swift/iOS version of the JoyPixels library:
 
  - `emojiVersion` (string) - Used only to direct CDN path. This is a 2-digit version (e.g. '3.1'). Not recommended for usage below 3.0.0.
  - `emojiSize` (enum) **Default: `32`** - Used only to direct CDN path for non-sprite PNG usage. Available options are '32', '64', and '128'.
@@ -43,7 +43,7 @@ Take native unicode emoji input and translate it to their corresponding shortnam
 **`client.shortnameToImage(String, UIFont) -> NSAttributedString`** - _shortname -> images_
 **`client.shortnameToImageAsync(String, UIFont, (NSAttributedString) -> Void)`** - _shortname -> images_
 
-Take input containing only shortnames and translate it directly to EmojiOne images (when displaying the unified input to clients).  The UIFont parameter is used to calculate the line height to display the emoji image appropriately.  The asynchronous version takes a callback as the third argument.
+Take input containing only shortnames and translate it directly to JoyPixels images (when displaying the unified input to clients).  The UIFont parameter is used to calculate the line height to display the emoji image appropriately.  The asynchronous version takes a callback as the third argument.
 
 **`client.shortnameToUnicode(String) -> String`** - _shortname -> native unicode emoji_
 
@@ -52,10 +52,10 @@ Take input containing only shortnames and translate it directly to Unicode Emoji
 **`client.unicodeToImage(String, UIFont) -> NSAttributedString`** - _native unicode -> images_
 **`client.unicodeToImageAsync(String, UIFont, (NSAttributedString) -> Void)`** - _native unicode -> images_
 
-Takes native unicode emoji input and translate it directly to EmojiOne images.  The UIFont parameter is used to calculate the line height to display the emoji image appropriately.  The asynchronous version takes a callback as the third argument.
+Takes native unicode emoji input and translate it directly to JoyPixels images.  The UIFont parameter is used to calculate the line height to display the emoji image appropriately.  The asynchronous version takes a callback as the third argument.
 
 **`client.toImage(String, UIFont) -> NSAttributedString`** - _native unicode + shortnames -> images_
 **`client.toImageAsync(String, UIFont, (NSAttributedString) -> Void)`** - _native unicode + shortnames -> images_
 
-Takes a string containing both native unicode emoji and shortnames, and translate it into EmojiOne images for display.  The UIFont parameter is used to calculate the line height to display the emoji image appropriately.  The asynchronous version takes a callback as the third argument.
+Takes a string containing both native unicode emoji and shortnames, and translate it into JoyPixels images for display.  The UIFont parameter is used to calculate the line height to display the emoji image appropriately.  The asynchronous version takes a callback as the third argument.
 

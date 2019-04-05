@@ -1,9 +1,9 @@
 //
 //  Client.swift
-//  Emojione
+//  JoyPixels
 //
 //  Created by Alex Yip on 6/22/18.
-//  Copyright © 2018 Emojione. All rights reserved.
+//  Copyright © 2019 JoyPixels Inc. All rights reserved.
 //
 
 import Foundation
@@ -18,10 +18,10 @@ public class Client: ClientInterface {
     public var emojiSize: EmojiSize = .size32
 
     public var greedyMatch: Bool = false
-    public var imagePathPNG = "https://cdn.jsdelivr.net/emojione/assets"
+    public var imagePathPNG = "https://cdn.jsdelivr.net/joypixels/assets"
 
     public var shortcodeRegEx: String = ":([-+\\w]+):"
-    public var unicodeRegEx: String = "(?:[\u{1f468}\u{1f469}]\u{200d}[\u{2764}\u{1f466}-\u{1f469}]\u{fe0f}?\u{200d}([\u{1f466}-\u{1f469}](\u{200d}[\u{1f466}-\u{1f467}])?|(\u{1f48b}\u{200d}[\u{1f468}\u{1f469}])?))|(?:\u{1F3F3}\u{FE0F}?\u{200D}?\u{1F308}|\u{1F441}\u{FE0F}?\u{200D}?\u{1F5E8}\u{FE0F}?)|[\u{0023}-\u{0039}]\u{FE0F}?\u{20e3}|(?:\u{1F3F4}[\u{E0060}-\u{E00FF}]{1,6})|[\u{1F1E0}-\u{1F1FF}]{2}|(?:[\u{1F468}\u{1F469}])\u{FE0F}?[\u{1F3FA}-\u{1F3FF}]?\u{200D}?(?:[\u{2695}\u{2696}\u{2708}\u{1F4BB}\u{1F4BC}\u{1F527}\u{1F52C}\u{1F680}\u{1F692}\u{1F33E}-\u{1F3ED}])|[\u{1F468}-\u{1F469}\u{1F9D0}-\u{1F9DF}][\u{1F3FA}-\u{1F3FF}]?\u{200D}?[\u{2640}\u{2642}\u{2695}\u{2696}\u{2708}]?\u{FE0F}?|(?:[\u{2764}\u{1F466}-\u{1F469}\u{1F48B}][\u{200D}\u{FE0F}]{0,2})|[\u{2764}\u{1F466}-\u{1F469}\u{1F48B}]|(?:[\u{2764}\u{1F466}-\u{1F469}\u{1F48B}]\u{FE0F}?)|(?:[\u{1f46e}\u{1F468}\u{1F469}\u{1f575}\u{1f471}-\u{1f487}\u{1F645}-\u{1F64E}\u{1F926}\u{1F937}]|[\u{1F460}-\u{1F482}\u{1F3C3}-\u{1F3CC}\u{26F9}\u{1F486}\u{1F487}\u{1F6A3}-\u{1F6B6}\u{1F938}-\u{1F93E}]|\u{1F46F})\u{FE0F}?[\u{1F3FA}-\u{1F3FF}]?\u{200D}?[\u{2640}\u{2642}]?\u{FE0F}?|(?:[\u{26F9}\u{261D}\u{270A}-\u{270D}\u{1F385}-\u{1F3CC}\u{1F442}-\u{1F4AA}\u{1F574}-\u{1F596}\u{1F645}-\u{1F64F}\u{1F6A3}-\u{1F6CC}\u{1F918}-\u{1F93E}]\u{FE0F}?[\u{1F3FA}-\u{1F3FF}])|(?:[\u{2194}-\u{2199}\u{21a9}-\u{21aa}]\u{FE0F}?|[\u{0023}-\u{002a}]|[\u{3030}\u{303d}]\u{FE0F}?|(?:[\u{1F170}-\u{1F171}]|[\u{1F17E}-\u{1F17F}]|\u{1F18E}|[\u{1F191}-\u{1F19A}]|[\u{1F1E6}-\u{1F1FF}])\u{FE0F}?|\u{24c2}\u{FE0F}?|[\u{3297}\u{3299}]\u{FE0F}?|(?:[\u{1F201}-\u{1F202}]|\u{1F21A}|\u{1F22F}|[\u{1F232}-\u{1F23A}]|[\u{1F250}-\u{1F251}])\u{FE0F}?|[\u{203c}\u{2049}]\u{FE0F}?|[\u{25aa}-\u{25ab}\u{25b6}\u{25c0}\u{25fb}-\u{25fe}]\u{FE0F}?|[\u{00a9}\u{00ae}]\u{FE0F}?|[\u{2122}\u{2139}]\u{FE0F}?|\u{1F004}\u{FE0F}?|[\u{2b05}-\u{2b07}\u{2b1b}-\u{2b1c}\u{2b50}\u{2b55}]\u{FE0F}?|[\u{231a}-\u{231b}\u{2328}\u{23cf}\u{23e9}-\u{23f3}\u{23f8}-\u{23fa}]\u{FE0F}?|\u{1F0CF}|[\u{2934}\u{2935}]\u{FE0F}?)|[\u{2700}-\u{27bf}]\u{FE0F}?|[\u{1F000}-\u{1F6FF}\u{1F900}-\u{1F9FF}]\u{FE0F}?|[\u{2600}-\u{26ff}]\u{FE0F}?|[\u{0030}-\u{0039}]\u{FE0F}"
+    public var unicodeRegEx: String = "(?:\u{D83C}\u{DFF3})\u{FE0F}?\u{200D}?(?:\u{D83C}\u{DF08})|(?:\u{D83D}\u{DC41})\u{FE0F}?\u{200D}?(?:\u{D83D}\u{DDE8})\u{FE0F}?|[#-9]\u{FE0F}?\u{20E3}|(?:(?:\u{D83C}\u{DFF4})(?:\u{DB40}[\u{DC60}-\u{DCFF}]){1,6})|(?:\u{D83C}[\u{DDE0}-\u{DDFF}]){2}|(?:(?:\u{D83D}[\u{DC68}\u{DC69}]))\u{FE0F}?(?:\u{D83C}[\u{DFFA}-\u{DFFF}])?\u{200D}?(?:[\u{2695}\u{2696}\u{2708}]|\u{D83C}[\u{DF3E}-\u{DFED}]|\u{D83D}[\u{DCBB}\u{DCBC}\u{DD27}\u{DD2C}\u{DE80}\u{DE92}])|(?:\u{D83D}[\u{DC68}\u{DC69}]|\u{D83E}[\u{DDD0}-\u{DDDF}])(?:\u{D83C}[\u{DFFA}-\u{DFFF}])?\u{200D}?[\u{2640}\u{2642}\u{2695}\u{2696}\u{2708}]?\u{FE0F}?|(?:(?:\u{2764}|\u{D83D}[\u{DC66}-\u{DC69}\u{DC8B}])[\u{200D}\u{FE0F}]{0,2}){1,3}(?:\u{2764}|\u{D83D}[\u{DC66}-\u{DC69}\u{DC8B}])|(?:(?:\u{2764}|\u{D83D}[\u{DC66}-\u{DC69}\u{DC8B}])\u{FE0F}?){2,4}|(?:\u{D83D}[\u{DC68}\u{DC69}\u{DC6E}\u{DC71}-\u{DC87}\u{DD75}\u{DE45}-\u{DE4E}]|\u{D83E}[\u{DD26}\u{DD37}]|\u{D83C}[\u{DFC3}-\u{DFCC}]|\u{D83E}[\u{DD38}-\u{DD3E}]|\u{D83D}[\u{DEA3}-\u{DEB6}]|\u{26f9}|\u{D83D}\u{DC6F})\u{FE0F}?(?:\u{D83C}[\u{DFFB}-\u{DFFF}])?\u{200D}?[\u{2640}\u{2642}]?\u{FE0F}?|(?:[\u{261D}\u{26F9}\u{270A}-\u{270D}]|\u{D83C}[\u{DF85}-\u{DFCC}]|\u{D83D}[\u{DC42}-\u{DCAA}\u{DD74}-\u{DD96}\u{DE45}-\u{DE4F}\u{DEA3}-\u{DECC}]|\u{D83E}[\u{DD18}-\u{DD3E}])\u{FE0F}?(?:\u{D83C}[\u{DFFB}-\u{DFFF}])|(?:[\u{2194}-\u{2199}\u{21a9}-\u{21aa}]\u{FE0F}?|[\u{0023}\u{002a}]|[\u{3030}\u{303d}]\u{FE0F}?|(?:\u{d83c}[\u{dd70}-\u{dd71}]|\u{d83c}\u{dd8e}|\u{d83c}[\u{dd91}-\u{dd9a}])\u{FE0F}?|\u{24c2}\u{FE0F}?|[\u{3297}\u{3299}]\u{FE0F}?|(?:\u{d83c}[\u{de01}-\u{de02}]|\u{d83c}\u{de1a}|\u{d83c}\u{de2f}|\u{d83c}[\u{de32}-\u{de3a}]|\u{d83c}[\u{de50}-\u{de51}])\u{FE0F}?|[\u{203c}\u{2049}]\u{FE0F}?|[\u{25aa}-\u{25ab}\u{25b6}\u{25c0}\u{25fb}-\u{25fe}]\u{FE0F}?|[\u{00a9}\u{00ae}]\u{FE0F}?|[\u{2122}\u{2139}]\u{FE0F}?|\u{d83c}\u{dc04}\u{FE0F}?|[\u{2b05}-\u{2b07}\u{2b1b}-\u{2b1c}\u{2b50}\u{2b55}]\u{FE0F}?|[\u{231a}-\u{231b}\u{2328}\u{23cf}\u{23e9}-\u{23f3}\u{23f8}-\u{23fa}]\u{FE0F}?|\u{d83c}\u{dccf}|[\u{2934}\u{2935}]\u{FE0F}?)|[\u{2700}-\u{27bf}]\u{FE0F}?|[\u{d800}-\u{dbff}][\u{dc00}-\u{dfff}]\u{FE0F}?|[\u{2600}-\u{26FF}]\u{FE0F}?|[\u{0030}-\u{0039}]\u{FE0F}"
 
     public private(set) var ruleset: RulesetInterface
 
@@ -360,10 +360,10 @@ public class Client: ClientInterface {
         }
     }
 
-    /// Gets associated Emojione filename from unicode emoji.
+    /// Gets associated JoyPixels filename from unicode emoji.
 
     /**
-     Gets associated Emojione filename from unicode emoji.
+     Gets associated JoyPixels filename from unicode emoji.
      */
 
     private func getFilename(emoji: String) -> String? {
@@ -376,10 +376,10 @@ public class Client: ClientInterface {
         return filename
     }
 
-    /// Downloads a list of filenames from Emojione servers asynchronously.
+    /// Downloads a list of filenames from JoyPixels servers asynchronously.
 
     /**
-     Downloads a list of filenames from Emojione servers asynchronously.
+     Downloads a list of filenames from JoyPixels servers asynchronously.
      */
 
     private func downloadImagesAsync(filenames: [String], callback: @escaping ([String: UIImage]) -> Void) {
@@ -413,43 +413,43 @@ public class Client: ClientInterface {
         return NSAttributedString(attachment: textAttachment)
     }
 
-    /// Builds URL object from Emojione filename.
+    /// Builds URL object from JoyPixels filename.
 
     /**
-     Builds URL object from Emojione filename.
+     Builds URL object from JoyPixels filename.
      */
 
-    private func getEmojiOneUrl(filename: String) -> URL? {
+    private func getJoyPixelsUrl(filename: String) -> URL? {
         let urlString = "\(imagePathPNG)/\(emojiVersion)/png/\(emojiSize.rawValue)/\(filename).png"
         return URL(string: urlString)
     }
 
-    /// Gets emoji image from Emojione's CDN.
+    /// Gets emoji image from JoyPixels' CDN.
     /// Returns nil if unable to download image.
 
     /**
-     Gets emoji image from Emojione's CDN.
+     Gets emoji image from JoyPixels' CDN.
      Returns nil if unable to download image.
      */
 
     private func getEmojiImage(filename: String) -> UIImage? {
-        guard let url = getEmojiOneUrl(filename: filename) else { return nil }
+        guard let url = getJoyPixelsUrl(filename: filename) else { return nil }
 
         guard let imageData = try? Data(contentsOf: url) else { return nil }
 
         return UIImage(data: imageData)
     }
 
-    /// Gets emoji image from Emojione's CDN asynchronously.
+    /// Gets emoji image from JoyPixels' CDN asynchronously.
     /// Returns nil if unable to download image.
 
     /**
-     Gets emoji image from Emojione's CDN asynchronously.
+     Gets emoji image from JoyPixels' CDN asynchronously.
      Returns nil if unable to download image.
      */
 
     private func getEmojiImageAsync(filename: String, callback: @escaping (UIImage?) -> Void) {
-        guard let url = getEmojiOneUrl(filename: filename) else { callback(nil); return }
+        guard let url = getJoyPixelsUrl(filename: filename) else { callback(nil); return }
 
         URLSession.shared.dataTask(with: url) { (data, _, _) -> Void in
             if let imageData = data, let image = UIImage(data: imageData) {

@@ -1,13 +1,13 @@
 //
 //  ClientTests.swift
-//  EmojioneTests
+//  JoyPixelsTests
 //
 //  Created by Alex Yip on 6/22/18.
-//  Copyright © 2018 Emojione. All rights reserved.
+//  Copyright © 2019 JoyPixels Inc. All rights reserved.
 //
 
 import XCTest
-@testable import Emojione
+@testable import JoyPixels
 
 class ClientTests: XCTestCase {
 

@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CF1A3A9420DD7C81009D6DE6 /* ClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1A3A9320DD7C81009D6DE6 /* ClientTests.swift */; };
-		CF4E745B20DD6602005C9460 /* Emojione.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF4E745120DD6602005C9460 /* Emojione.framework */; };
-		CF4E746220DD6602005C9460 /* Emojione.h in Headers */ = {isa = PBXBuildFile; fileRef = CF4E745420DD6602005C9460 /* Emojione.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF4E745B20DD6602005C9460 /* JoyPixels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF4E745120DD6602005C9460 /* JoyPixels.framework */; };
+		CF4E746220DD6602005C9460 /* JoyPixels.h in Headers */ = {isa = PBXBuildFile; fileRef = CF4E745420DD6602005C9460 /* JoyPixels.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF4E749020DD66DB005C9460 /* Ruleset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4E748F20DD66DB005C9460 /* Ruleset.swift */; };
 		CF4E749220DD66EB005C9460 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4E749120DD66EB005C9460 /* Client.swift */; };
 		CF4E749620DD67FD005C9460 /* RulesetInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4E749520DD67FD005C9460 /* RulesetInterface.swift */; };
@@ -23,16 +23,16 @@
 			containerPortal = CF4E744820DD6602005C9460 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = CF4E745020DD6602005C9460;
-			remoteInfo = Emojione;
+			remoteInfo = JoyPixels;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		CF1A3A9320DD7C81009D6DE6 /* ClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientTests.swift; sourceTree = "<group>"; };
-		CF4E745120DD6602005C9460 /* Emojione.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Emojione.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF4E745420DD6602005C9460 /* Emojione.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Emojione.h; sourceTree = "<group>"; };
+		CF4E745120DD6602005C9460 /* JoyPixels.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JoyPixels.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF4E745420DD6602005C9460 /* JoyPixels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JoyPixels.h; sourceTree = "<group>"; };
 		CF4E745520DD6602005C9460 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CF4E745A20DD6602005C9460 /* EmojioneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmojioneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF4E745A20DD6602005C9460 /* JoyPixelsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JoyPixelsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF4E746120DD6602005C9460 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF4E748F20DD66DB005C9460 /* Ruleset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ruleset.swift; sourceTree = "<group>"; };
 		CF4E749120DD66EB005C9460 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF4E745B20DD6602005C9460 /* Emojione.framework in Frameworks */,
+				CF4E745B20DD6602005C9460 /* JoyPixels.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,8 +63,8 @@
 		CF4E744720DD6602005C9460 = {
 			isa = PBXGroup;
 			children = (
-				CF4E745320DD6602005C9460 /* Emojione */,
-				CF4E745E20DD6602005C9460 /* EmojioneTests */,
+				CF4E745320DD6602005C9460 /* JoyPixels */,
+				CF4E745E20DD6602005C9460 /* JoyPixelsTests */,
 				CF4E745220DD6602005C9460 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,33 +72,33 @@
 		CF4E745220DD6602005C9460 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CF4E745120DD6602005C9460 /* Emojione.framework */,
-				CF4E745A20DD6602005C9460 /* EmojioneTests.xctest */,
+				CF4E745120DD6602005C9460 /* JoyPixels.framework */,
+				CF4E745A20DD6602005C9460 /* JoyPixelsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CF4E745320DD6602005C9460 /* Emojione */ = {
+		CF4E745320DD6602005C9460 /* JoyPixels */ = {
 			isa = PBXGroup;
 			children = (
 				CF4E749120DD66EB005C9460 /* Client.swift */,
 				CF4E749720DD6805005C9460 /* ClientInterface.swift */,
 				CFA2B55120E498FC00BF7720 /* EmojiSize.swift */,
-				CF4E745420DD6602005C9460 /* Emojione.h */,
+				CF4E745420DD6602005C9460 /* JoyPixels.h */,
 				CF4E745520DD6602005C9460 /* Info.plist */,
 				CF4E748F20DD66DB005C9460 /* Ruleset.swift */,
 				CF4E749520DD67FD005C9460 /* RulesetInterface.swift */,
 			);
-			path = Emojione;
+			path = JoyPixels;
 			sourceTree = "<group>";
 		};
-		CF4E745E20DD6602005C9460 /* EmojioneTests */ = {
+		CF4E745E20DD6602005C9460 /* JoyPixelsTests */ = {
 			isa = PBXGroup;
 			children = (
 				CF1A3A9320DD7C81009D6DE6 /* ClientTests.swift */,
 				CF4E746120DD6602005C9460 /* Info.plist */,
 			);
-			path = EmojioneTests;
+			path = JoyPixelsTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,16 +108,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF4E746220DD6602005C9460 /* Emojione.h in Headers */,
+				CF4E746220DD6602005C9460 /* JoyPixels.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		CF4E745020DD6602005C9460 /* Emojione */ = {
+		CF4E745020DD6602005C9460 /* JoyPixels */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CF4E746520DD6602005C9460 /* Build configuration list for PBXNativeTarget "Emojione" */;
+			buildConfigurationList = CF4E746520DD6602005C9460 /* Build configuration list for PBXNativeTarget "JoyPixels" */;
 			buildPhases = (
 				CF4E744C20DD6602005C9460 /* Sources */,
 				CF4E744D20DD6602005C9460 /* Frameworks */,
@@ -128,14 +128,14 @@
 			);
 			dependencies = (
 			);
-			name = Emojione;
-			productName = Emojione;
-			productReference = CF4E745120DD6602005C9460 /* Emojione.framework */;
+			name = JoyPixels;
+			productName = JoyPixels;
+			productReference = CF4E745120DD6602005C9460 /* JoyPixels.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		CF4E745920DD6602005C9460 /* EmojioneTests */ = {
+		CF4E745920DD6602005C9460 /* JoyPixelsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CF4E746820DD6602005C9460 /* Build configuration list for PBXNativeTarget "EmojioneTests" */;
+			buildConfigurationList = CF4E746820DD6602005C9460 /* Build configuration list for PBXNativeTarget "JoyPixelsTests" */;
 			buildPhases = (
 				CF4E745620DD6602005C9460 /* Sources */,
 				CF4E745720DD6602005C9460 /* Frameworks */,
@@ -146,9 +146,9 @@
 			dependencies = (
 				CF4E745D20DD6602005C9460 /* PBXTargetDependency */,
 			);
-			name = EmojioneTests;
-			productName = EmojioneTests;
-			productReference = CF4E745A20DD6602005C9460 /* EmojioneTests.xctest */;
+			name = JoyPixelsTests;
+			productName = JoyPixelsTests;
+			productReference = CF4E745A20DD6602005C9460 /* JoyPixelsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -159,7 +159,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
-				ORGANIZATIONNAME = Emojione;
+				ORGANIZATIONNAME = JoyPixels;
 				TargetAttributes = {
 					CF4E745020DD6602005C9460 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -170,7 +170,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CF4E744B20DD6602005C9460 /* Build configuration list for PBXProject "Emojione" */;
+			buildConfigurationList = CF4E744B20DD6602005C9460 /* Build configuration list for PBXProject "JoyPixels" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -182,8 +182,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CF4E745020DD6602005C9460 /* Emojione */,
-				CF4E745920DD6602005C9460 /* EmojioneTests */,
+				CF4E745020DD6602005C9460 /* JoyPixels */,
+				CF4E745920DD6602005C9460 /* JoyPixelsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -231,7 +231,7 @@
 /* Begin PBXTargetDependency section */
 		CF4E745D20DD6602005C9460 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CF4E745020DD6602005C9460 /* Emojione */;
+			target = CF4E745020DD6602005C9460 /* JoyPixels */;
 			targetProxy = CF4E745C20DD6602005C9460 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -367,11 +367,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Emojione/Info.plist;
+				INFOPLIST_FILE = JoyPixels/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.emojione.Emojione;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JoyPixels.JoyPixels;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -390,11 +390,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Emojione/Info.plist;
+				INFOPLIST_FILE = JoyPixels/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.emojione.Emojione;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JoyPixels.JoyPixels;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -407,9 +407,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = EmojioneTests/Info.plist;
+				INFOPLIST_FILE = JoyPixelsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.emojione.EmojioneTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JoyPixels.JoyPixelsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -421,9 +421,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = EmojioneTests/Info.plist;
+				INFOPLIST_FILE = JoyPixelsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.emojione.EmojioneTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JoyPixels.JoyPixelsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -433,7 +433,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CF4E744B20DD6602005C9460 /* Build configuration list for PBXProject "Emojione" */ = {
+		CF4E744B20DD6602005C9460 /* Build configuration list for PBXProject "JoyPixels" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CF4E746320DD6602005C9460 /* Debug */,
@@ -442,7 +442,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CF4E746520DD6602005C9460 /* Build configuration list for PBXNativeTarget "Emojione" */ = {
+		CF4E746520DD6602005C9460 /* Build configuration list for PBXNativeTarget "JoyPixels" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CF4E746620DD6602005C9460 /* Debug */,
@@ -451,7 +451,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CF4E746820DD6602005C9460 /* Build configuration list for PBXNativeTarget "EmojioneTests" */ = {
+		CF4E746820DD6602005C9460 /* Build configuration list for PBXNativeTarget "JoyPixelsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CF4E746920DD6602005C9460 /* Debug */,
