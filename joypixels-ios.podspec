@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'joypixels-ios'
-  s.version          = '4.5.3'
+  s.version          = '4.5.0'
   s.summary          = 'Official JoyPixels iOS Emoji Toolkit'
   s.description      = 'JoyPixels iOS Emoji Toolkit is used to convert emoji into various formats, including conversion to JoyPixels emoji images.'
   s.homepage         = 'https://www.joypixels.com'
