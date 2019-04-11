@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.author           = { 'JoyPixels Inc' => 'support@joypixels.com' }
   s.source           = { :git => 'https://github.com/joypixels/emoji-toolkit-ios.git', :tag => "v#{s.version.to_s}" }
   s.social_media_url = 'https://twitter.com/joypixels'
-  s.ios.deployment_target = '11.0'
+  s.ios.deployment_target = '10.0'
   s.source_files = 'JoyPixels/JoyPixels/*.swift'
-  s.swift_version = '4.1'
+  s.swift_version = '4.2'
 end
