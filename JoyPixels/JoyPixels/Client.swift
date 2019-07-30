@@ -420,7 +420,7 @@ public class Client: ClientInterface {
      */
 
     private func getJoyPixelsUrl(filename: String) -> URL? {
-        let urlString = "\(imagePathPNG)/\(emojiVersion)/png/\(emojiSize.rawValue)/\(filename).png"
+        let urlString = "\(imagePathPNG)/\(emojiVersion)/png/unicode/\(emojiSize.rawValue)/\(filename).png"
         return URL(string: urlString)
     }
 
