@@ -14,7 +14,7 @@ public class Client: ClientInterface {
     public var riskyMatchAscii: Bool = false  // set true to match ascii without leading/trailing space char
     public var shortcodes: Bool = true  // convert shortcodes?
 
-    public var emojiVersion: String = "5.0"
+    public var emojiVersion: String = "6.0"
     public var emojiSize: EmojiSize = .size32
 
     public var greedyMatch: Bool = false
