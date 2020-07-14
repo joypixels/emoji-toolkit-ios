@@ -8368,7 +8368,7 @@ public class Ruleset: RulesetInterface {
         "E38A99": ":secret:"
     ]
 
-    private let unicodeReplaceGreedy: [String: String] = []
+    private let unicodeReplaceGreedy: [String: String] = ["E10000" : ":empty:"]
 
     /// Returns the shortcode unicode replacement rules
 
