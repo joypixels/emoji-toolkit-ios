@@ -56,3 +56,7 @@ If you have any questions, comments, or concerns you are welcome to contact us.
 * [support@joypixels.com](mailto:support@joypixels.com)
 * [https://www.joypixels.com](https://www.joypixels.com)
 * [https://twitter.com/joypixels](https://twitter.com/joypixels)
+
+### Consideration
+
+The library's `unicodeRegEx` value was generated using [s9e\RegexpBuilder](https://github.com/s9e/RegexpBuilder).
